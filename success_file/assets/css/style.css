@@ -1,0 +1,295 @@
+﻿/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+
+/* =============================================================
+   GENERAL STYLES
+   ============================================================ */
+   body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F9D9D9;
+  }
+  .pad-top {
+    padding-top:60px;
+  }
+  .text-center {
+    text-align:center;
+  }
+  i.fa {
+    padding:5px;
+  }
+  section {
+    padding-top:50px;
+  }
+
+  p {
+    font-weight:300;
+    line-height:30px;
+  }
+  .pad-row {
+    padding-top:40px;
+    padding-bottom:40px;
+  }
+  .pad-bottom {
+    padding-bottom:50px;
+  }
+
+  /* NAVBAR STYLE */
+
+
+  .navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+  }
+
+  .navbar-inverse .navbar-brand {
+    color: #FFF;
+  }
+
+
+  /* ADDED PADDING IN NAVBAR */
+
+  .navbar {
+    padding:15px;
+    -webkit-transition: background .8s ease-out,padding .8s ease-out;
+    -moz-transition: background .8s ease-out,padding .8s ease-out;
+    transition: background .8s ease-out,padding .8s ease-out;
+  }
+
+
+  /* CLASS FOR REMOVING PADDING IN NAVBAR*/
+
+  .navbar-pad-original {
+    padding:0px;
+  }
+
+
+
+  /* CARUOSEL STYLE OR SLIDESHOW STYLE*/
+
+
+  .back-light {
+    background-color:rgba(0, 0, 0, 0.50);
+    padding:10px;
+  }
+  /*NOTE SECION STYLE*/
+  .note-sec {
+   padding-bottom:50px;
+   background: url(../img/4.jpg) no-repeat 50% 50%;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   width: 100%;
+   display: block;
+   height: auto;
+   min-height:300px;
+   color:#fff;
+ }
+
+ /*HEADINGS IMAGE STYLE*/
+
+
+ .head-main-img {
+   padding-bottom:50px;
+   background: url(../img/4.jpg) no-repeat 50% 50%;
+   background-attachment: fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   width: 100%;
+   display: block;
+   height: auto;
+   min-height:300px;
+   color:#fff;
+ }
+ .head-main-img h1 {
+  padding: 50px 2px 2px 10px;
+  text-transform:uppercase;
+}
+
+
+
+/*CONTACT STYLES*/
+
+
+.cnt {
+  width: 100%;
+  min-height: 350px;
+  border: 1px solid #e1e1e1;
+}
+.add {
+  font-size:20px;
+  font-weight:800;
+  padding:30px;
+}
+#contact-sec {
+  padding-top:0px;
+}
+
+
+/* FOOTER STYLE*/
+
+
+#footer-sec {
+  background-color:#000;
+  color:#808080;
+}
+#footer-sec h4 {
+  text-transform:uppercase;
+  color:#fff;
+}
+
+
+/* Grape */
+
+.box header .toolbar .progress {
+  min-width: 120px;
+  margin: 10px 4px;
+}
+
+.box header .toolbar .progress.mini {
+  height: 6px;
+  margin: 16px 4px;
+}
+
+@media (min-width: 992px) {
+  #left {
+    width: 220px;
+  }
+  #left #menu.affix {
+    width: 220px;
+  }
+  .mini-sidebar #left {
+    width: 100px;
+  }
+  .mini-sidebar #left #menu.affix {
+    width: 100px;
+  }
+  #content {
+    margin-left: 220px;
+  }
+  .side-right #content {
+    margin-right: 220px;
+  }
+  .mini-sidebar #content {
+    margin-left: 100px;
+  }
+  .mini-sidebar.side-right #content {
+    margin-right: 100px;
+    margin-left: 0;
+  }
+}
+
+.anim-checkbox .info:checked + label:before,
+.anim-checkbox .info:checked + label:after {
+  color: #5bc0de;
+}
+
+#right {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  body.fixed #wrap,
+  body.fixed #footer,
+  body.fixed #top .navbar.navbar-fixed-top {
+    max-width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-sidebar #left,
+  .hide-sidebar #right {
+    display: none;
+  }
+  .hide-sidebar #content {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+.side-right .head .main-bar {
+  margin-left: 0;
+  margin-right: 220px;
+}
+
+/*end grape*/
+
+.button {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #F62A2A}
+
+.button:active {
+  background-color: #F62A2A;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/*end botton*/
+
+select{
+    width: 50%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+table {
+    width: 100%;
+    margin: 0 0 20px 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: #f1f1f1;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+/*end table*/
+.button_bmi {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #F34040;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button_bmi:hover {background-color: #FC1F52}
+
+.button_bmi:active {
+  background-color: #FC1F52;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/*end botton bmi*/

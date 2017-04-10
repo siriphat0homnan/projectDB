@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 04:26 PM
+-- Generation Time: Apr 10, 2017 at 04:20 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -68,8 +68,9 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`cid`, `title`, `f_name`, `l_name`, `blood_type`, `birth_date`, `address`, `job`, `email`, `disease`) VALUES
-('1234567891011', 'Mr', 'à¹€à¸•à¹‡à¸‡à¸«à¸™à¸', 'à¹€à¸šà¸­à¸£à¹Œà¸ªà¸', 'AB-', '1989-07-14', 'à¸ªà¸¸à¹€à¸—à¸žà¸„à¸­à¸™à¹‚à¸”', 'à¸žà¸£à¸°à¸ à¸´à¸à¸©à¸¸,à¸ªà¸²à¸¡à¹€à¸“à¸£', 'Teng1@mail.com', 'à¹„à¸¡à¹ˆà¸¡à¸µ'),
-('1234567891018', 'Miss', 'à¸˜à¸´à¸”à¸²', 'à¸”à¸§à¸‡à¹€à¸”à¸·à¸', 'AB', '1989-07-15', 'à¸ªà¸¸à¹€à¸—à¸žà¸„à¸­à¸™à¹‚à¸”', 'à¸„à¹‰à¸²à¸‚à¸²à¸¢', 'Thida@mail.com', 'à¹„à¸¡à¹ˆà¸¡à¸µ');
+('1234567891018', 'Ms', 'ธิดา', 'ดวงเดือน', 'O-', '1989-07-15', 'สุเทพคอนโด', 'ค้าขาย', 'Thida@mail.com', 'ไม่มี'),
+('6546454749854', 'Mr', 'ธงชัย', 'ใจดี', 'B-', '1889-12-11', 'กรุงเทพ', 'อื่นๆ', 'TT@mail.com', 'หอบหืด'),
+('7894562159789', 'Ms', 'ศรีทา', 'กันทา', 'B-', '1996-11-08', ' ยะลา', 'พนักงานบริษัท,พนักงานรับจ้าง', 'Sri@mail.com', 'ไม่มี');
 
 -- --------------------------------------------------------
 
@@ -104,8 +105,9 @@ CREATE TABLE `donor_tel` (
 --
 
 INSERT INTO `donor_tel` (`cid`, `tel`) VALUES
-('1234567891011', '053648888'),
-('1234567891018', '053648888');
+('1234567891018', '053648888'),
+('6546454749854', '0822484165'),
+('7894562159789', '0825478964');
 
 -- --------------------------------------------------------
 
@@ -144,6 +146,16 @@ CREATE TABLE `hospital` (
   `O_neg_vol` float DEFAULT NULL,
   `AB_neg_vol` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Dumping data for table `hospital`
+--
+
+INSERT INTO `hospital` (`h_name`, `A_vol`, `B_vol`, `O_vol`, `AB_vol`, `A_neg_vol`, `B_neg_vol`, `O_neg_vol`, `AB_neg_vol`) VALUES
+('มหาราชนครเชียงใหม่', 15000, 15000, 30000, 10000, 9000, 9000, 9000, 9000),
+('สภากาชาดไทย', 3000, 3000, 3000, 3000, 1000, 1000, 1000, 1000),
+('เชียงใหม่ราม', 900, 900, 900, 900, 900, 800, 800, 700),
+('แมคคอร์มิค', 800, 800, 800, 800, 500, 600, 400, 550);
 
 -- --------------------------------------------------------
 
@@ -205,16 +217,19 @@ CREATE TABLE `transfer` (
 
 CREATE TABLE `user` (
   `username` varchar(15) COLLATE utf8_croatian_ci NOT NULL,
-  `password` varchar(10) COLLATE utf8_croatian_ci NOT NULL
+  `password` varchar(10) COLLATE utf8_croatian_ci NOT NULL,
+  `h_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`) VALUES
-('maharajcm', 'cm1234'),
-('redcrossth', 'rc1234');
+INSERT INTO `user` (`username`, `password`, `h_name`) VALUES
+('maharajcm', 'cm1234', 'มหาราชนครเชียงใหม่'),
+('redcrossth', 'rc1234', 'สภากาชาดไทย'),
+('cmram', 'cmram1234', 'เชียงใหม่ราม'),
+('mccormick', 'mc1234', 'แมคคอร์มิค');
 
 -- --------------------------------------------------------
 
@@ -311,7 +326,8 @@ ALTER TABLE `transfer`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`,`password`);
+  ADD PRIMARY KEY (`username`,`password`),
+  ADD KEY `h_name` (`h_name`);
 
 --
 -- Indexes for table `webboard`
@@ -391,6 +407,12 @@ ALTER TABLE `staff_tel`
 ALTER TABLE `transfer`
   ADD CONSTRAINT `transfer_ibfk_1` FOREIGN KEY (`sender_name`) REFERENCES `hospital` (`h_name`),
   ADD CONSTRAINT `transfer_ibfk_2` FOREIGN KEY (`recipient_name`) REFERENCES `hospital` (`h_name`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`h_name`) REFERENCES `hospital` (`h_name`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

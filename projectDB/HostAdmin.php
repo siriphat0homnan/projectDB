@@ -8,7 +8,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-        <title>Bloodd</title>
+        <title>Blood</title>
         <!-- BOOTSTRAP CORE STYLE CSS -->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLE CSS -->
@@ -27,44 +27,17 @@
             if (document.getElementById('num_blood').value=="" || document.getElementById('num_blood').value==null) { 
                 alert("ยังไม่ได้กรอกปริมาณเลือด");
                 return false;} 
-
-                confirm("If you confirm!");
-
-            /*if (confirm("If you confirm!") == true) {
-              x = "You pressed OK!";
-            } else {
-              //x = "You pressed Cancel!";
-              return false;
             }
-          //*/ //document.getElementById("demo").innerHTML = x;
-      }
-  </script>
+        </script>
 
-
-  <?php
-  session_start();
-  $user = $_SESSION['U'];
-
-        /*$servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "blood";
-
-        $conn = new mysqli($servername,$username,$password,$dbname);
-
-        if ($conn->connect_error) {
-          die ("Connection failed: ".$conn->connect_error);
-        }
-
-        $conn->query("SET NAMES UTF8");
-*/
+        <?php
+        session_start();
+        $user = $_SESSION['U'];
         include 'connect.php';
         $sql = "select h_name from user where username = '$user' ";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $hos = $row['h_name'];
-        
-
         ?>
 
         <div class="navbar navbar-inverse navbar-fixed-top" >
@@ -116,56 +89,61 @@ $result = $conn->query($sql);
 
 <div class="col text-center navbar col-md-5 col-sm-5 " >
 
-    <from method="post" action="sendblood.php" >
+
+
+    <form method="post" action="sendblood.php">
        <div class="row text-left pad-row">
-        <div class="alert alert-warning"> 
-          โรงพยาบาล:
-          <select id="hospital" name="hospital">
+           
+           <div class="alert alert-warning"> 
+              โรงพยาบาล:
+              <select id="hospital" name="hospital">
 
-            <?php
-            $i = 1;
-            while ($row=$result->fetch_assoc()) {
-              $name = $row['h_name'];
-              echo '<option value=" '.$row['username'].' ">';
-              echo $name."</option>";
-              $i++;
-          }
+                <?php
+                $i = 1;
+                while ($row=$result->fetch_assoc()) {
+                  $name = $row['h_name'];
+                  echo '<option value=" '.$row['username'].' ">';
+                  echo $name."</option>";
+                  $i++;
+              }
 
-          ?>
+              ?>
 
-      </select>
+          </select>
+
+      </div>
+
+
+      <div class="alert alert-warning">
+          กรุ๊ปเลือด:  
+
+          <select id="hospital" name="blood_type">
+              <option  value="O_vol">O</option>
+              <option value="A_vol">A</option>
+              <option value="B_vol">B</option>
+              <option value="AB_vol">AB</option>
+              <option value="O_neg_vol">O-</option>
+              <option value="A_neg_vol">A-</option>
+              <option value="B_neg_vol">B-</option>
+              <option value="AB_neg_vol">AB-</option>
+
+          </select>
+
+      </div>
+
+      <div class="alert alert-warning">
+          กรอกจำนวนเลือด:  <input type="text" id="num_blood" name="num_blood">
+
+      </div>
+
+      <div class="alert alert-warning">
+          ยืนยัน:  <input type="submit" value="Submit" name="submit">
+
+      </div>
+
+
 
   </div>
-
-
-  <div class="alert alert-warning">
-      กรุ๊ปเลือด:  
-
-      <select id="hospital" name="blood">
-          <option  value="1">O</option>
-          <option value="2">A</option>
-          <option value="3">B</option>
-          <option value="4">AB</option>
-          <option value="5">O-</option>
-          <option value="6">A-</option>
-          <option value="7">B-</option>
-          <option value="8">AB-</option>
-
-      </select>
-
-  </div>
-
-  <div class="alert alert-warning">
-      กรอกจำนวนเลือด:  <input type="text" id="num_blood" name="num_blood">
-
-  </div>
-
-  <div class="alert alert-warning">
-      ยืนยัน:  <input type="submit" value="Submit" >
-
-  </div>
-
-</div>
 </div>
 </from>
 

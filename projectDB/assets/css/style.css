@@ -1,4 +1,4 @@
-﻿/*=============================================================
+/*=============================================================
     Authour URI: www.binarytheme.com
     License: Commons Attribution 3.0
 
@@ -292,12 +292,7 @@ table, td, th {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.scroll {
-    background-color: #00FFFF;
-    width: 100px;
-    height: 100px;
-    overflow: scroll;
-}
+
 
 
 /*end botton bmi*/

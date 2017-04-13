@@ -21,10 +21,10 @@ include 'connect.php';
 
 
 //$SQL = 'update hospital, user set '.$blood.'='.$blood.'+'.$num. ' where username = '.$hos.' and user.h_name = hospital.h_name';
+$SQL1 = "update hospital, user set $blood = $blood - $num where (username = '$user') and (user.h_name = hospital.h_name)";
+echo $SQL1."<br>";
 
-$SQL = "update hospital, user set $blood = $blood+$num where username = '$hos' and user.h_name = hospital.h_name";
-
-
+$SQL = "update hospital, user set $blood = $blood + $num where (username = '$hos') and (user.h_name = hospital.h_name)";
 echo $SQL."<br>";
 /*if ($conn->query($SQL)=== TRUE){
     echo "update complete\n";
@@ -32,9 +32,13 @@ echo $SQL."<br>";
     echo "Update fail";
 }*/
 
-$SQL1 = "update hospital, user set $blood = $blood-$num where username = '$user' and user.h_name = hospital.h_name";
 
-echo $SQL1."<br>";
+
+// if ($conn->query($SQL)=== TRUE){
+//     echo "update 1 complete";
+// }else{
+//     echo "Update 1s fail";
+// }
 
 if ($conn->query($SQL1)=== TRUE){
     echo "update 1 complete";

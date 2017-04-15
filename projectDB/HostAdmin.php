@@ -38,6 +38,15 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $hos = $row['h_name'];
+
+        $sql = "select title, f_name, l_name from staff where username = '$user' ";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $title = $row['title'];
+        $f_name = $row['f_name'];
+        $l_name = $row['l_name'];
+
+
         ?>
 
         <div class="navbar navbar-inverse navbar-fixed-top" >
@@ -68,7 +77,7 @@
      <div class="row text-left pad-row">
       <div class="alert alert-warning"> 
         Name Hospital: <?php echo $hos; ?> <p>
-        Name Admin: xxxxxxx  xxxxxxx<p>
+        Name Admin: <?php echo $title.' '.$f_name.' '.$l_name; ?><p>
     </div>
 
     <div class="alert alert-warning"> 

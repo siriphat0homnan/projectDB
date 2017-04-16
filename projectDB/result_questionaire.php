@@ -97,25 +97,17 @@ session_start()
         <section id="intro">
           <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 5%;padding-bottom: 20%; background-color: #F9D9D9; width: 100%; height: 100%;">
             <?php 
-            if ($_SESSION['w'] == 350){
-              echo '<h2>ท่านสามารถบริจาคเลือดได้ประมาณ ';
-              echo $_SESSION['w']; 
-              echo '+-10% มล.</h2>';
+            if ($_SESSION["result"] == true){
+              echo '<h2>ท่านสามารถบริจาคโลหิตได้';
             }
 
-            if ($_SESSION['w'] == 450){
-              echo '<h2>ท่านสามารถบริจาคเลือดได้ประมาณ ';
-              echo $_SESSION['w']; 
-              echo '+-10% มล.</h2>';
-            }
-             
-            if ($_SESSION['w'] == 1){  
-              echo '<h1>ท่านยังไม่สามารถบริจาคโลหิตได้ เนื่องจากน้ำหนักของท่านน้อยกว่าเกณฑ์</h1>';
+            if ($_SESSION["result"] == false){
+              echo '<h2>ท่านยังไม่พร้อมที่จะบริจาคโลหิตได้';
             }
             ?>
 
-            <!-- <h1>ทำแบบสอบถามความพร้อมก่อนบริจาคโลหิต</h1> -->
-            <a href="questionaire.php">ไปยังหน้าแบบสอบถามเตรียมความพร้อมในการบริจาคโลหิต</a>
+            <h1>การกรอกข้อมูลและวินิจฉัยผู้บริจาคเสร็จเรียบร้อยแล้ว</h1>
+            <a href="CheckUserInput.php">กลับไปยังหน้าหลัก</a>
 
         </div>
 

@@ -115,7 +115,7 @@
               <br><u><h3>ข้อมูลผู้บริจาค</h3></u> <br>
             </div>
 
-            <form method="post" name="myForm" action="questionaire.php" onsubmit="return validateForm();" >
+            <form method="post" name="myForm" action="inputWeight.php" onsubmit="return validateForm();" >
               <div class="floating-box">
                 <input type="radio" name="title" value="Mr" checked> นาย &nbsp;&nbsp;
                 <input type="radio" name="title" value="Miss">  นาง &nbsp;&nbsp;

@@ -69,25 +69,6 @@
                     </div>
 
 
-                    <div class="col-md-3">
-                        <div class="row text-left pad-row" style="padding-left:5px;">
-                           <div class="alert alert-info">
-                                <center><h3>ดัชนีมวลกาย</h3></center>
-                            <center><a href="bmi.php"><button class="button_bmi">Calculator BMI</button></a></center>
-                            <br>
-                            <br>
-                            
-                        </div>
-                        </div>
-                    </div>
-
-
-                    
-
-
-
-
-
                 </div>
             </div>
         </section>

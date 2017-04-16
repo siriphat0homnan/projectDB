@@ -29,10 +29,10 @@
 
         <section id="intro">
             <div class="container">
-                <div class="col text-center navbar col-md-5 col-sm-5 " >
+                <div class="col text-center navbar col-md-12 col-sm-12 " >
                  <p>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="row text-left pad-row">
                            <div class="alert alert-info">
                                 <center><h3>ดัชนีมวลกาย</h3></center>
@@ -43,6 +43,51 @@
                         </div>
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="row text-left pad-row" style="padding-left:5px;">
+                           <div class="alert alert-info">
+                                <center><h3>คำนวณการเผาผลาญพลังงาน</h3></center>
+                            <center><a href="bmr.php"><button class="button_bmi">Calculator BMR</button></a></center>
+                            <br>
+                            <br>
+                            
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="row text-left pad-row" style="padding-left:5px;">
+                           <div class="alert alert-info">
+                                <center><h3>ดัชนีมวลกาย</h3></center>
+                            <center><a href="bmi.php"><button class="button_bmi">Calculator BMI</button></a></center>
+                            <br>
+                            <br>
+                            
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="row text-left pad-row" style="padding-left:5px;">
+                           <div class="alert alert-info">
+                                <center><h3>ดัชนีมวลกาย</h3></center>
+                            <center><a href="bmi.php"><button class="button_bmi">Calculator BMI</button></a></center>
+                            <br>
+                            <br>
+                            
+                        </div>
+                        </div>
+                    </div>
+
+
+                    
+
+
+
+
+
                 </div>
             </div>
         </section>

@@ -22,7 +22,7 @@
     <body >
     <?php
         if (isset($_GET['submit'])) {
-            $old = htmlentities($_GET['old']);
+            $old = htmlentities($_GET['age']);
             $weight = htmlentities($_GET['weight']);
             $height = htmlentities($_GET['height']);
             $bmr_man = 66 + (13.7 * $weight) + (5 * $height) - (6.8 * $old);
@@ -54,8 +54,8 @@
                         <div class="row text-center pad-row">
                             <div class="alert alert-info">
                                     <form action="" method="get">
-                                    <label for="old" style="padding-left:15px;" >Old (year)</label>
-                                    <input type="text"  id="old" name="old" placeholder="Old" style="width: 50%;" data-validation="old"> <br><br>
+                                    <label for="age" style="padding-left:15px;" >Age (year)</label>
+                                    <input type="text"  id="age" name="age" placeholder="Age" style="width: 50%;" data-validation="age"> <br><br>
 
                                     <label for="weight">Weight (kg.)</label>
                                     <input type="text"  id="weight" name="weight" placeholder="Weight" style="width: 50%;" data-validation="weight"> <br><br>
@@ -63,7 +63,7 @@
                                     <label for="height">Height (cm.)</label>
                                     <input type="text"  id="height" name="height" placeholder="Height" style="width: 50%;" data-validation="height"> <br><br>
 
-                                    <input type="submit" name="submit" value="คำนวณ">
+                                    <input type="submit" name="submit" value="Calculate">
                                     </form>
                                 </div>
                             </div>

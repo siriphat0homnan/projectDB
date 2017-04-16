@@ -37,6 +37,7 @@
             <div class="container">
             <br><br>
                 <h1><u><center>การหาค่าดัชนีมวลกาย (Body Mass Index : BMI) </center></u></h1>
+                
                 <div class="col text-center navbar col-md-7 col-sm-7 " style="margin-left: 20%">
                    <p>
 
@@ -53,13 +54,13 @@
                                     <label for="height">height (cm.)</label>
                                     <input type="text"  id="height" name="height" placeholder="Height" style="width: 50%;" data-validation="height"> <br><br>
 
-                                    <input type="submit" name="submit" value="คำนวณ">
+                                    <input type="submit" name="submit" value="Calculate">
                                     </form>
                                 </div>
                             </div>
                             <h1>
                             <?php if( isset($result) ){
-                                    echo ($result);
+                                    echo (sprintf('%0.2f', $result));
                                 }else {
                                     echo (0);
                                     }  ?>

@@ -93,12 +93,9 @@
                             </span>
                         </div>
 
-                        <div class="alert alert-info">
-                            <a href="bmi.php"><button class="button_bmi">Calculator BMI</button></a>
-                            <br>
-                            <br>
-                            
-                        </div>
+
+
+                        
 
                     </div>
 
@@ -106,22 +103,6 @@
                 </div>
             </section>
 
-            <!--/.JUST-INTRO END-->
-            <section  class="note-sec" >
-             <div class="container">
-                 <div class="row text-center pad-row" >
-                    <div class="col-md-6 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
-                        <i class="fa fa-quote-left fa-3x"></i>
-                        <p>
-                            อยากให้ทุกคนช่วยกันบริจาคเลือด
-                        </p>
-                    </div>
-                </div>
-            </div>   
-
-        </section>
-
-        <!--/.CLIENTS END-->
         <?php include "footer.php" ?>        
  <!--/.FOOTER END-->
  <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->

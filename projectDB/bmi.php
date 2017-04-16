@@ -29,29 +29,7 @@
         }
     ?>
 
-        <div class="navbar navbar-inverse navbar-fixed-top" >
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                  <a href="index.html"><img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;"></a>
-            
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="news.html">NEWS</a></li>
-                        <li><a href="blog.html">BLOG</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                        <li><a href="login.html">ADMIN</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
+        <?php include "header.php" ?> 
         <!--/.NAVBAR END-->
 
         <section id="intro">
@@ -155,42 +133,7 @@
     </section>
 
     <!--/.CLIENTS END-->
-    <section id="footer-sec" >
-
-        <div class="container">
-         <div class="row  pad-bottom" >
-            <div class="col-md-4">
-                <h4> <strong>Project by</strong> </h4>
-                <p>
-                    Name: <br>
-                    Name: <br>
-                    Name: <br>
-                    Name: <br>
-
-                </p>
-
-            </div>
-            <div class="col-md-4">
-                <h4> <strong>SOCIAL LINKS</strong> </h4>
-                <p>
-                   <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
-                   <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
-                   <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
-                   <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
-               </p>
-           </div>
-           <div class="col-md-4">
-             <h4> <strong>OUR LOCATION</strong> </h4>
-             <p>
-                 239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 <br/>
-                 โทรศัพท์ : 0-5394-3414-16  <br/>
-                 โทรสาร : 0-5389-2281 <br/>
-                 E-mail : compsci@cmu.ac.th
-             </p>
-         </div>
-     </div>
- </div>
-</section>         
+    <?php include "footer.php" ?>          
 <!--/.FOOTER END-->
 <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
 <!-- CORE JQUERY  -->

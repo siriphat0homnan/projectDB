@@ -29,13 +29,18 @@
 
         <section id="intro">
             <div class="container">
-
                 <div class="col text-center navbar col-md-5 col-sm-5 " >
                  <p>
                     
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="row text-left pad-row">
-                            <!-- input news -->
+                           <div class="alert alert-info">
+                                <center><h3>ดัชนีมวลกาย</h3></center>
+                            <center><a href="bmi.php"><button class="button_bmi">Calculator BMI</button></a></center>
+                            <br>
+                            <br>
+                            
+                        </div>
                         </div>
                     </div>
                 </div>

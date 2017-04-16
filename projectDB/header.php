@@ -33,7 +33,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php">HOME</a></li>
-                        <li><a href="news.php">NEWS</a></li>
+                        <li><a href="MS.php">MEDICAL SURVER</a></li>
                         <li><a href="blog.php">BLOG</a></li>
                         <li><a href="contact.php">CONTACT</a></li>
                         <li><a href="login_page.php">ADMIN</a></li>

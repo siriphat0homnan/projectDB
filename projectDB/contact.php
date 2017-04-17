@@ -40,7 +40,8 @@
       <section  id="contact-sec">
        <iframe class="cnt" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d944.2183763351593!2d98.95197312915113!3d18.80378979920279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a6986a44d33%3A0x26567f48ad5789ee!2z4Lig4Liy4LiE4Lin4Li04LiK4Liy4Lin4Li04LiX4Lii4Liy4LiB4Liy4Lij4LiE4Lit4Lih4Lie4Li04Lin4LmA4LiV4Lit4Lij4LmM!5e0!3m2!1sth!2sth!4v1487059979622" ></iframe>
        <div class="add">
-         <i>ที่อยู่: </i>239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 
+         <i>ที่อยู่: </i>239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 <br>
+         <label>หากโรงพยาบาลไหนสนใจเข้าร่วมโครงการโอนเลือดจากโรงพยาบาลสู่โรพยาบาลนี้ให้ติดต่อ: rodcross@hotmail.com</label>
        </div>
        <hr />
      </section>

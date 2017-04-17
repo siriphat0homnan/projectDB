@@ -55,9 +55,8 @@
                 <p>
                  <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
                  <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
-                 <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
                  <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
-             </p>
+            </p>
          </div>
          <div class="col-md-4">
            <h4> <strong>OUR LOCATION</strong> </h4>

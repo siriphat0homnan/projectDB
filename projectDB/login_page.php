@@ -70,13 +70,17 @@
         <!--/.NAVBAR END-->
 
         <section id="intro">
-
-        <div style=" border: 1px solid #F9D9D9; padding: 10%;width: 100%; height: 200%;text-align: center; background-color: #F9D9D9;margin-top: auto;">
+            <div class="container">
+        <div style=" border: 1px solid #F9D9D9; width: 100%; height: 200%;text-align: center; background-color: #F9D9D9;margin-top: auto;">
+        <div class="col text-center navbar col-md-12 col-sm-12 " style="padding-left:30%; padding-top:10%;">
+            <div class="alert alert-info col-md-6" >
             <form method="post" action="login.php" name="myForm" onsubmit="return validateForm();"">
               Username:  <input type="text" name="username"> <br><br>
               Password: <input type="Password" name="pass"> <br><br>
               <input type="submit" value="login"> <br>
             </form>
+            </div>
+          </div>
           </div>
 
           <script>
@@ -87,7 +91,7 @@
              }
            });
          </script>
-
+         </div>
        </section>
 
        <!--/.JUST-INTRO END-->

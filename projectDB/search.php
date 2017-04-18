@@ -2,8 +2,8 @@
 /**
  * @Author: Lock-On
  * @Date:   2017-04-06 18:52:11
- * @Last Modified by:   Lock-On
- * @Last Modified time: 2017-04-06 20:30:06
+ * @Last Modified by:   sahapap
+ * @Last Modified time: 2017-04-13 00:09:41
  */
 ?>
 
@@ -143,7 +143,8 @@ session_start();
         echo "<td>".$row['cid']."</td>";
         echo "<td>".$row['f_name']."</td>";
         echo "<td>".$row['l_name']."</td>";
-        echo "<td> <a href>แก้ไข</a> </td>";
+        echo "<td> <a href='testedit.php?cid=$sid'>แก้ไข</a> / ";
+        echo "<a href ='delete.php?cid=$sid'>ลบข้อมูล</a></td>";
         echo "</tr>";
 
 

@@ -56,15 +56,11 @@ session_start()
         <script>
           function validateForm()
           {
-            var fname=document.forms["myForm"]["Sname"].value;
-            var lname=document.forms["myForm"]["Lname"].value;
-            var tel=document.forms["myForm"]["tel"].value;
-            var Sid=document.forms["myForm"]["Sid"].value;
-            var address=document.forms["myForm"]["address"].value;
-            if ( (fname==null || fname=="") || (lname==null || lname=="") || (tel==null || tel=="") || (Sid==null || Sid=="") || (address==null || address=="") )
-                {  alert("กรุณากรอกข้อมูลให้ครบ");
-              return false;  }
-
+            var idnum = document.getElementById('idnum').value;
+            if (idnum == null || idnum == ""){
+            	alert("โปรดใส่ข้อมูล");
+            	return false;
+            }
           }
         </script>
 
@@ -96,22 +92,26 @@ session_start()
 
         <section id="intro">
           <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 5%;padding-bottom: 20%; background-color: #F9D9D9; width: 100%; height: 100%;">
-          <form method="get" action="inputInfo.php">
-              <p>กรอกเลขประจำตัวประชาชน: <input type="number" name="idnum"></p>
+          <form method="get" action="inputInfo.php" onclick="return validateForm()">
+              <p>กรอกเลขประจำตัวประชาชน: <input type="text" pattern="[0-9]{13}" maxlength="13" class="form-control" id="idnum" name="idnum" title="เช่น 85711xxxxxxxx" style="width: 30%;"></p>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <?php
             	include "connect.php";
-
-            	
 
             	if (isset($_GET['idnum'])) {
        			
         		$idnum = $_GET['idnum'];
 
             	$poon = "SELECT cid, title, f_name, l_name, blood_type, birth_date, address, job, email, disease FROM donor WHERE cid = '$idnum'";
+            	$tim = "SELECT h_name, cid, age, weight, vol_blood, count, date_time, ssn FROM donor_donation WHERE cid = $idnum"
 
             	$result = $conn->query($poon);
+
+            	if ($result->num_rows == 0){
+            		echo "ยังไม่มีข้อมูลในระบบ";
+
+            	} else {
             	
             	$row = $result->fetch_assoc();
             	$cid = $row['cid'];
@@ -125,15 +125,28 @@ session_start()
             	$email = $row['email'];
             	$disease = $row['disease'];
 
+            	$hname = $row['h_name'];
+            	$cid = $row['cid'];
+            	$age = $row['age'];
+            	$weight = $row['weight'];
+            	$volblood = $row['vol_blood'];
+            	$count = $row['count'];
+            	$datetime = $row['date_time'];
+            	$ssn = $row['ssn'];
+
         		echo"<table>
             	<tr>
             	 <td>$cid</td> <td>$title</td><td>$fname</td><td>$lname</td><td>$blood</td><td>$birth_date</td><td>$address</td><td>$job</td><td>$email</td><td>$disease</td>
             	</tr>
             	</table>";
+
+            	echo "<table>
+            		<tr>
+            			<td>$hname</td><td>$cid</td><td>$age</td><td>$weight</td><td>$volblood</td><td>$count</td><td>$datetime</td><td>$ssn</td>
+            		</tr>
+            	</table>"
         		}
-
-
-
+        		}
             ?>
 
           </div>

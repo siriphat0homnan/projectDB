@@ -81,7 +81,8 @@
     </div>
 
     <div class="alert alert-warning"> 
-        <center><a href="search.php"><button>แก้ไขข้อมูลผู้บริจาค</button></a></center>
+        <center><a href="search.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
+        <center><a href="searchbyname.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
     </div>
 
     

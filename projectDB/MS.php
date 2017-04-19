@@ -34,7 +34,7 @@
                     
                     
                         <div class="row text-center pad-row">
-                           <div class="alert alert-info">
+                           <div class="alert alert-info" style=" margin-left: 4%;border: 2px solid black;">
                             <font face="Comic sans MS" size="3">
                                 <a href="bmi.php">ดัชนีมวลกาย Calculator BMI</a><br><br>
                             

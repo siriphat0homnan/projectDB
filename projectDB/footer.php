@@ -42,10 +42,10 @@
             <div class="col-md-4">
                 <h4> <strong>Project by</strong> </h4>
                 <p>
-                    Name: <br>
-                    Name: <br>
-                    Name: <br>
-                    Name: <br>
+                    Name: Mr. Natcharat   Nithakorn 580510592<br>
+                    Name: Mr. Nonthachat  Thipsan   580510602<br>
+                    Name: Mr. Siriphat    Homnan    580510638<br>
+                    Name: Mr. Sahapap     panya     580510641<br>
 
                 </p>
 

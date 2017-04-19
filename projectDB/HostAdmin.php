@@ -85,7 +85,7 @@
                   <center><a href="searchbyname.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
                 </div>
 
-                
+
               </div>
             </div>
 
@@ -157,7 +157,7 @@
                     include 'connect.php';
                     $sql = "SELECT sender_name, recipient_name, date_time, blood_send, volume FROM transfer";
                     $result = $conn->query($sql);
-                    
+
                     while ($row = $result->fetch_assoc()) {
                       echo $row["sender_name"]." ไปยัง ".$row["recipient_name"]." ".$row["date_time"]."  ".$row["blood_send"]."  ".$row["volume"]."<br>";
                     }
@@ -209,7 +209,9 @@
                <div class="progress progress-striped active progress-adjust">
                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($on/$div * 100); ?>%">
                  <span class="sr-only">100% Complete</span>
+                 <font color="black">
                  <?php echo ($on); ?>
+                 </font>
 
                </div>
 
@@ -222,7 +224,9 @@
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($an/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
+                <font color="black">
                 <?php echo ($an); ?>
+                </font>
 
               </div>
             </div>
@@ -234,7 +238,9 @@
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"            aria-valuemax="100" style="width: <?php echo ceil($bn/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
+                <font color="black">
                 <?php echo ($bn); ?>
+                </font>
               </div>
             </div>
 
@@ -245,7 +251,9 @@
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"               aria-valuemax="100" style="width: <?php echo ceil($abn/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
+                <font color="black">
                 <?php echo ($abn); ?>
+                </font>
               </div>
             </div>
 
@@ -265,7 +273,9 @@
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($o/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
+                <font color="black">
                 <?php echo ($o); ?>
+                </font>
               </div>
             </div>
 
@@ -276,7 +286,9 @@
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($a/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
+                <font color="black">
                 <?php echo ($a); ?>
+                </font>
               </div>
             </div>
 
@@ -287,7 +299,9 @@
            <div class="progress progress-striped active progress-adjust">
             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($b/$div * 100); ?>%">
               <span class="sr-only">100% Complete</span>
+              <font color="black">
               <?php echo ($b); ?>
+              </font>
             </div>
           </div>
 
@@ -298,7 +312,9 @@
          <div class="progress progress-striped active progress-adjust">
           <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($ab/$div * 100); ?>%">
             <span class="sr-only">100% Complete</span>
+            <font color="black">
             <?php echo ($ab); ?>
+            </font>
           </div>
         </div>
 

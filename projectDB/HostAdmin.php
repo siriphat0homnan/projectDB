@@ -84,7 +84,8 @@
                   <font color="black">Email: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $email  ?></u></font>
                 </div>
 
-                <div class="alert alert-warning " style="border: 2px solid black;"> 
+                <div class="alert alert-warning " style="border: 2px solid black;">
+                  <center><a href="findInfo.php" ><button style="border: 2px solid black;">ค้นหาข้อมูลจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
                   <center><a href="search.php" ><button style="border: 2px solid black;">แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
                   <center><a href="searchbyname.php"><button style="border: 2px solid black;">แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
                 </div>

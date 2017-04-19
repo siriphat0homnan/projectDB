@@ -97,21 +97,12 @@ session_start();
         <section id="intro">
           <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 5%;padding-bottom: 20%; background-color: #F9D9D9; width: 100%; height: 100%;">
             <?php 
-            if ($_SESSION["result"] == true){
-              echo '<h1>ท่านสามารถบริจาคโลหิตได้';
-            }
 
             if ($_SESSION["result"] == false){
-              echo '<h1>ท่านยังไม่พร้อมที่จะบริจาคโลหิตได้';
-            }
-            ?>
-
-            <h2>การกรอกข้อมูลและวินิจฉัยผู้บริจาคเสร็จเรียบร้อยแล้ว</h2>
-            <a href="HostAdmin.php">กลับไปยังหน้าหลัก</a>
-
-            <?php
-
-            include "connect.php";
+              echo '<h1>ท่านยังไม่พร้อมที่จะบริจาคโลหิตได้</h1>';
+            } else {
+              echo '<h1>ท่านสามารถบริจาคโลหิตได้</h1>';
+              include "connect.php";
 
 
             $cid = $_SESSION['idnum'];
@@ -170,14 +161,18 @@ session_start();
 
             $SQL2 = "update hospital set $blood = $blood + $vol where h_name = 'สภากาชาดไทย'";
             // echo $SQL2;
-            $conn->query($SQL2)
+            $conn->query($SQL2);
 
             // if ($conn->query($SQL2) === TRUE ){
             //   echo "update complete";
             // }else{
             //   echo "update incomplete";
             // }
+            }
             ?>
+
+            <h2>การกรอกข้อมูลและวินิจฉัยผู้บริจาคเสร็จเรียบร้อยแล้ว</h2>
+            <a href="HostAdmin.php">กลับไปยังหน้าหลัก</a>    
 
           </div>
 

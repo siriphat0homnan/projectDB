@@ -93,7 +93,7 @@ if ( $conn->query($sql)===TRUE ){
 
 $conn->close();
 
-//header('location:questionaire.php');
+header('location:inputWeight.php');
 
     //wait......... insert to database
 ?>

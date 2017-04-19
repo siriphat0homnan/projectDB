@@ -47,7 +47,6 @@ if ($c2 == "yes") {
 if ($c31 == "yes"){
     $result = false;
     }
-}
 if ($c32 == "yes"){
     $result = false;
 }

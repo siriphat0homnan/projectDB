@@ -84,6 +84,10 @@
         <center><input type="submit" value="แก้ไขข้อมูลผู้บริจาค"></center>
     </div>
 
+    <div class="alert alert-warning"> 
+        <center><a href="findInfo.php"><input type="submit" value="ค้นหาข้อมูลผู้บริจาค"></a></center>
+    </div>
+
     
 </div>
 </div>

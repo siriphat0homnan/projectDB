@@ -89,7 +89,7 @@ if ($input_blood <= $row[$blood]) {
 }else{
     echo "ERROR";
 }
-sleep(5);
+sleep(0.5);
 header('location: http://localhost/projectDB/projectDB/HostAdmin.php');
 exit;
 ?>

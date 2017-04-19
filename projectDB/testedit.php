@@ -94,7 +94,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="CheckUserInput.php"><img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;"></a>
+              <a href="HostAdmin.php"><img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;"></a>
               
             </div>
             <div class="navbar-collapse collapse">

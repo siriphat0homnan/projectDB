@@ -1,5 +1,5 @@
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 </head>
 <?php
 session_start();
@@ -31,7 +31,7 @@ $mail = $_POST['mail'];
 $tel = $_POST['tel'];
 $disease = $_POST['disease'];
 
-echo $title." ".$first." ".$last." ".$cid."<br>";
+/*echo $title." ".$first." ".$last." ".$cid."<br>";
 echo $birth."<br>";
 echo $address."<br>";
 echo $htel."<br>";
@@ -39,7 +39,7 @@ echo $tel."<br>";
 echo $job."<br>";
 echo $blood."<br>";
 echo $mail."<br>";
-echo $disease."<br>";
+echo $disease."<br>";*/
 
 if ( strcmp($job,"student")==0 ) {
     $carrer = "นักเรียน/นักศึกษา";
@@ -71,22 +71,28 @@ if ( $disease == '-' ){
 
 $sql = "insert into donor values ('$cid','$title','$first','$last','$blood','$birth','$address','$carrer','$mail','$disease')";
 
-$conn->query($sql);
+if ( $conn->query($sql)===TRUE ){
+    if ( strcmp($tel,"-")!=0 ){
+        $sql = "insert into donor_tel values ('$cid','$tel')";
+        $conn->query($sql);
+    }
 
-if ( strcmp($tel,"-")!=0 ){
-    $sql = "insert into donor_tel values ('$cid','$tel')";
-    $conn->query($sql);
+
+    if ( strcmp($htel,"-")!=0 ){
+        $sql = "insert into donor_tel values ('$cid','$htel')";
+        $conn->query($sql);
+        header('location:questionaire.php');
+    }
+    echo "insert complete";
+}else{
+    echo "<script>alert('บันทึกข้อมูลไม่สำเร็จ');</script>";
+    echo "<center><h2><a href='InputInformation.php'>กลับสู่หน้าบัทึกข้อมูล</a></h2></center>";
 }
 
 
-if ( strcmp($htel,"-")!=0 ){
-    $sql = "insert into donor_tel values ('$cid','$htel')";
-    $conn->query($sql);
-}
 
 $conn->close();
 
-echo "insert complete";
 //header('location:questionaire.php');
 
     //wait......... insert to database

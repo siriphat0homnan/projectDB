@@ -22,16 +22,16 @@ $mail = $_POST['mail'];
 $tel = $_POST['tel'];
 $disease = $_POST['disease'];
 
-echo $first." ".$last." ".$cid."<br>";
+//echo $first." ".$last." ".$cid."<br>";
 //echo $birth."<br>";
-echo $address."<br>";
+/*echo $address."<br>";
 echo $htel."<br>";
 echo $tel."<br>";
 echo $job."<br>";
-//echo $blood."<br>";
-echo $mail."<br>";
+*///echo $blood."<br>";
+/*echo $mail."<br>";
 echo $disease."<br>";
-
+*/
 if ( strcmp($job,"student")==0 ) {
     $carrer = "นักเรียน/นักศึกษา";
 }
@@ -62,36 +62,43 @@ if ( $disease == '-' ){
 
 include 'connect.php';
 
-$sql =  "update donor set f_name='$first', l_name='$last', address='$address', job='$job', email='$mail', disease='$disease' where cid='$cid'";
+$sql =  "update donor set f_name='$first', l_name='$last', address='$address', job='$carrer', email='$mail', disease='$disease' where cid='$cid'";
 
-echo "\n".$sql;
+//echo "\n".$sql;
 
 if ($conn->query($sql)=== TRUE){
-    echo "\n update Complete";
+    //echo "\n update Complete";
+    
+    $d = "delete from donor_tel where cid='$cid'";
+
+    //echo "\n".$d."\n";
+
+    if ( $conn->query($d)===TRUE ) {
+        //echo "delete tel complete";
+    }else{
+        //echo "delete fail";
+    }
+
+    if ( strcmp($tel,"-")!=0 ){
+        $sql = "insert into donor_tel values ('$cid','$tel')";
+        $conn->query($sql);
+    }
+
+
+    if ( strcmp($htel,"-")!=0 ){
+        $sql = "insert into donor_tel values ('$cid','$htel')";
+        $conn->query($sql);
+    }
+
+    echo "<script>alert('แก้ไขข้อมูลได้เวร็จสิ้นแล้ว');</script>";
+    echo "<center><h2><a href='search.php'>กลับสู่หน้าหลัก</a></h2></center>";
+
 }else{
-    echo "update fail";
-}
-
-$d = "delete from donor_tel where cid='$cid'";
-
-echo "\n".$d."\n";
-
-if ( $conn->query($d)===TRUE ) {
-    echo "delete tel complete";
-}else{
-    echo "delete fail";
-}
-
-if ( strcmp($tel,"-")!=0 ){
-    $sql = "insert into donor_tel values ('$cid','$tel')";
-    $conn->query($sql);
+    echo "<script>alert('ไม่สามารถแก้ไขข้อมูลได้');</script>";
+    echo "<center><h2><a href='search.php'>กลับสู่หน้าหลัก</a></h2></center>";
 }
 
 
-if ( strcmp($htel,"-")!=0 ){
-    $sql = "insert into donor_tel values ('$cid','$htel')";
-    $conn->query($sql);
-}
 
 
 

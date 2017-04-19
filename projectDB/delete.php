@@ -21,9 +21,14 @@ $sql = "delete from donor where cid='$id'";
 
 
 if ($conn->query($sql)===TRUE){
-    echo "<script>alert('delete complete');</script>";
+    echo "<script>alert('ลบข้อมูลสำเร็จ');</script>";
+    echo "<center><h2><a href='HostAdmin.php'>กลับสู่หน้าหลัก</a></h2></center>";
 }else{
-    echo "<script>alert('delete fail');</script>";
+    
+    echo "<script>alert('ไม่สามารถลบข้อมูลได้');</script>";
+    echo "<center><h2><a href='HostAdmin.php'>กลับสู่หน้าหลัก</a></h2></center>";
 }
+
+$conn->close();
 
 ?>

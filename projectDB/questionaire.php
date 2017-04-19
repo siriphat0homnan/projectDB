@@ -32,7 +32,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;">
+             <a href="HostAdmin.php"> <img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;"></a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">

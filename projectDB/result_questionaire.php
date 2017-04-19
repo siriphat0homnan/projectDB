@@ -80,7 +80,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;">
+              <a href="HostAdmin.php"><img src="assets/img/logo.jpg" alt="logo" style="width:180px;height:70px;"></a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
@@ -132,17 +132,23 @@ session_start();
             $datetime = date("Y-m-d");
             // echo $datetime;
 
+            $SQL4 = "select h_name from user where username = '".$_SESSION['U']."' ";
+           //echo $SQL4;
+          $h = $conn->query($SQL4);
+           
+          $h2 = $h->fetch_assoc();
+
             $ssn = "(SELECT D.ssn FROM staff as S, donor_donation as D WHERE D.ssn = S.ssn)";
 
-            $sql1 = 'INSERT INTO donor_donation (h_name, cid, age, weight, vol_blood, count, date_time) VALUES ("สภากาชาดไทย", "'.$cid.'", '.$age1.', '.$weight.', '.$vol.', '.$sqlcount.', "'.$datetime.'")';
+            $sql1 = 'INSERT INTO donor_donation (h_name, cid, age, weight, vol_blood, count, date_time) VALUES ("'.$h2['h_name'].'", "'.$cid.'", '.$age1.', '.$weight.', '.$vol.', '.$sqlcount.', "'.$datetime.'")';
 
-            // echo $sql1."\n";
+             //echo $sql1."\n";
 
-            // if ( $conn->query($sql1)===TRUE ){
-            //   echo "insert complete";
-            // }else{
-            //   echo "insert incomplete";
-            // }
+             if ( $conn->query($sql1)===TRUE ){
+               //echo "insert complete";
+             }else{
+               //echo "insert incomplete";
+             }
 
             $bloodtypeSQL = "select * FROM donor as D WHERE D.cid = '$idnum'";
           //  $blood_type = $conn->query(bloodtypeSQL);

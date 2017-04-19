@@ -2,8 +2,8 @@
 /**
  * @Author: Lock-On
  * @Date:   2017-04-06 18:52:11
- * @Last Modified by:   sahapap
- * @Last Modified time: 2017-04-13 00:09:41
+ * @Last Modified by:   Lock-On
+ * @Last Modified time: 2017-04-06 20:30:06
  */
 ?>
 
@@ -107,7 +107,7 @@ session_start();
 <section id="intro">
     <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 5%;padding-bottom: 20%; background-color: #F9D9D9; width: 100%; height: 100%;">
         <form method="get" action="search.php" onclick="return validateForm()">
-          <p>กรุณาใส่เลขบัตรประจำตัวประชาชน: <<input type="text" pattern="[0-9]{13}" maxlength="13" class="form-control" name="sid" id="sid" title="เช่น 85711xxxxxxxx" style="width: 30%;"> </p>
+          <p>กรุณาใส่เลขบัตรประจำตัวประชาชน: <<input type="text" pattern="[0-9]{13}" maxlength="13" class="form-control" name="sid" id="sid" title="เช่น 85711xxxxxxxx" style="width: 30%;" required=""> </p>
           <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <br><br><br>
@@ -128,29 +128,35 @@ session_start();
 
     if (isset($_GET['sid'])) {
         $sid = $_GET['sid'];
-        echo "$sid";
+        //echo "$sid";
 
         $sql = "select * from donor where cid = '$sid' ";
         $result=$conn->query($sql);
 
+
         $row = $result->fetch_assoc();
+        if ($row['cid']== "") {
+            # code...
+            echo "<h2>ไม่พบขอมูลที่ค้นหา</h2>";
+        }else{
 
        // echo $row['cid'].$row['f_name'];
+            $id = $row['cid'];
 
-        echo '<table width="5%" align="center">';
-        echo "<thead> <tr> <th>เลขประจำตัวประชาชน</th> <th>ชื่อ</th> <th>นามสกกุล</th> <th colspan='2'>แก้ไข/ลบ</th> </tr> </thead>";
-        echo '<tr>';
-        echo "<td>".$row['cid']."</td>";
-        echo "<td>".$row['f_name']."</td>";
-        echo "<td>".$row['l_name']."</td>";
-        echo "<td> <a href='testedit.php?cid=$sid'>แก้ไข</a> / ";
-        echo "<a href ='delete.php?cid=$sid'>ลบข้อมูล</a></td>";
-        echo "</tr>";
-
+            echo '<table  align="center">';
+            echo "<thead> <tr> <th>เลขประจำตัวประชาชน</th> <th>ชื่อ</th> <th>นามสกกุล</th> <th colspan='2'>แก้ไข/ลบ</th> </tr> </thead>";
+            echo '<tr>';
+            echo "<td>".$id."</td>";
+            echo "<td>".$row['f_name']."</td>";
+            echo "<td>".$row['l_name']."</td>";
+            echo "<td> <a href='testedit.php?cid=$id'>แก้ไข</a> / ";
+            echo "<a href>ลบ</a></td>";
+            echo "</tr>";
+        }
 
     }
 
-    $conn->close();
+    $conn->close(); 
     ?>
 </div>
 <table width="10%" style="border-color: #F9D9D9;" ></table>
@@ -160,8 +166,8 @@ session_start();
 
 <!--/.JUST-INTRO END-->
 <section  class="note-sec" >
-   <div class="container">
-     <div class="row text-center pad-row" >
+ <div class="container">
+   <div class="row text-center pad-row" >
       <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
         <i class="fa fa-quote-left fa-3x"></i>
         <p>
@@ -176,35 +182,35 @@ session_start();
 <section id="footer-sec" >
 
   <div class="container">
-   <div class="row  pad-bottom" >
+     <div class="row  pad-bottom" >
+        <div class="col-md-4">
+          <h4> <strong>Project by</strong> </h4>
+          <p>
+            Name: <br>
+            Name: <br>
+            Name: <br>
+            Name: <br>
+
+        </p>
+
+    </div>
     <div class="col-md-4">
-      <h4> <strong>Project by</strong> </h4>
+      <h4> <strong>SOCIAL LINKS</strong> </h4>
       <p>
-        Name: <br>
-        Name: <br>
-        Name: <br>
-        Name: <br>
-
-    </p>
-
-</div>
-<div class="col-md-4">
-  <h4> <strong>SOCIAL LINKS</strong> </h4>
-  <p>
-   <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
-   <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
-   <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
-   <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
-</p>
-</div>
-<div class="col-md-4">
- <h4> <strong>OUR LOCATION</strong> </h4>
- <p>
-   239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 <br/>
-   โทรศัพท์ : 0-5394-3414-16  <br/>
-   โทรสาร : 0-5389-2281 <br/>
-   E-mail : compsci@cmu.ac.th
-</p>
+         <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
+         <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
+         <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
+         <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
+     </p>
+ </div>
+ <div class="col-md-4">
+   <h4> <strong>OUR LOCATION</strong> </h4>
+   <p>
+     239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 <br/>
+     โทรศัพท์ : 0-5394-3414-16  <br/>
+     โทรสาร : 0-5389-2281 <br/>
+     E-mail : compsci@cmu.ac.th
+ </p>
 </div>
 </div>
 </div>

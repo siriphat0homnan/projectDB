@@ -164,7 +164,7 @@
 */
                ?>
                <label for="id">เลขบัตรระจำตัวประชาชน: </label>
-                <input type="text" pattern="[0-9]{13}" maxlength="13" class="form-control" name="Sid" title="เช่น 85711xxxxxxxx" style="width: 30%;" value="<?php echo $cid; ?>" readonly> <br>
+                <input type="text" pattern="[0-9]{13}" maxlength="13" class="form-control" name="Sid" title="เช่น 85711xxxxxxxx" style="width: 30%;" value="<?php echo $id; ?>" readonly> <br>
 
                <label for="Sname">ชื่อ:</label>
                <input type="text" class="form-control" name="Sname" placeholder="ชื่อ" pattern="[ก-ฮะาิีึืุูเแัโำไใ์็ฤฦ่้๊๋]{2,100}" title="กรุณากรอกชื่อเป็นภาษาไทย: กฤตภาสต์" style="width: 30%;" value="<?php echo $fname; ?>"> <br>
@@ -181,13 +181,13 @@
                <!--  <input type="textarea" class="form-control" name="address" style="width: 100%; height: 100%;"> --> 
 
                <?php
-               if ( $ans->num_rows == 0 ){
+               /*if ( $ans->num_rows == 0 ){
                  echo '<label for="tel">เบอร์โทรศัพท์บ้าน:</label>
                  <input type="text"  class="form-control" name="htel" id="htel" maxlength="9" onclick="checkTel()" placeholder="หากไม่มี โปรดใส่ -" style="width: 30%; height: 50%;" value="-"> <br><br>';
 
                  echo '<label for="tel">เบอร์โทรศัพท์เคลื่อนที่:</label>
-                 <input type="text" pattern="[0-9]{10}" class="form-control" name="tel" maxlength="10" onclick="checkTel()" placeholder="" style="width: 30%; height: 30%;" value="-"> <br>';
-               }
+                 <input type="text" pattern="[0123456789-   ]{10}" class="form-control" name="tel" maxlength="10" onclick="checkTel()" placeholder="" style="width: 30%; height: 30%;" value="-"> <br>';
+               }*/
 
                if ( $ans->num_rows == 1 ){
                  $a = $ans->fetch_assoc();

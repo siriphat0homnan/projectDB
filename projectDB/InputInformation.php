@@ -74,9 +74,6 @@
               document.getElementById('htel').style.borderColor = "white";
             }
 
-
-
-            //alert(htel);
           }
         </script>
 
@@ -115,7 +112,7 @@
               <br><u><h3>ข้อมูลผู้บริจาค</h3></u> <br>
             </div>
 
-            <form method="post" name="myForm" action="inputWeight.php" onsubmit="return validateForm();" >
+            <form method="post" name="myForm" action="data.php" onsubmit="return validateForm();" >
               <div class="floating-box">
                 <input type="radio" name="title" value="Mr" checked> นาย &nbsp;&nbsp;
                 <input type="radio" name="title" value="Miss">  นาง &nbsp;&nbsp;
@@ -142,7 +139,7 @@
               <input type="text"  class="form-control" name="htel" id="htel" maxlength="9" onclick="checkTel()" placeholder="หากไม่มี โปรดใส่ -" style="width: 30%; height: 50%;"> <br><br>  <!--  pattern="[0123456789-]"
             -->
             <label for="tel">เบอร์โทรศัพท์เคลื่อนที่:</label>
-            <input type="text" pattern="[0-9]{10}" class="form-control" name="tel" maxlength="10" onclick="checkTel()" placeholder="" style="width: 30%; height: 30%;"> <br>
+            <input type="text"  class="form-control" pattern="[0-9]{10}" name="tel" maxlength="10" onclick="checkTel()" placeholder="" style="width: 30%; height: 30%;" required=""> <br>    <!-- pattern="[0-9]{10}" -->
 
             <label for="mail">E-mail:</label>
             <input type="email" class="form-control" name="mail" placeholder="E-mail" style="width: 30%;" data-validation="email" title="เช่น example@email.com"> <br>

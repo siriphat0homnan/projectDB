@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -98,80 +98,80 @@ session_start()
           <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 5%;padding-bottom: 20%; background-color: #F9D9D9; width: 100%; height: 100%;">
             <?php 
             if ($_SESSION["result"] == true){
-              echo '<h2>ท่านสามารถบริจาคโลหิตได้';
+              echo '<h1>ท่านสามารถบริจาคโลหิตได้';
             }
 
             if ($_SESSION["result"] == false){
-              echo '<h2>ท่านยังไม่พร้อมที่จะบริจาคโลหิตได้';
+              echo '<h1>ท่านยังไม่พร้อมที่จะบริจาคโลหิตได้';
             }
             ?>
 
-            <h1>การกรอกข้อมูลและวินิจฉัยผู้บริจาคเสร็จเรียบร้อยแล้ว</h1>
+            <h2>การกรอกข้อมูลและวินิจฉัยผู้บริจาคเสร็จเรียบร้อยแล้ว</h2>
             <a href="CheckUserInput.php">กลับไปยังหน้าหลัก</a>
 
-        </div>
-
-      </section>
-      <!-- <input type="number" name="weight"> -->
-
-      <!--/.JUST-INTRO END-->
-      <section  class="note-sec" >
-       <div class="container">
-         <div class="row text-center pad-row" >
-          <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
-            <i class="fa fa-quote-left fa-3x"></i>
-            <p>
-              อยากให้ทุกคนช่วยกันบริจาคเลือดดดดด
-            </p>
           </div>
-        </div>
-      </div>   
-    </section>
 
-    <!--/.CLIENTS END-->
-    <section id="footer-sec" >
+        </section>
+        <!-- <input type="number" name="weight"> -->
 
-      <div class="container">
-       <div class="row  pad-bottom" >
-        <div class="col-md-4">
-          <h4> <strong>Project by</strong> </h4>
-          <p>
-            Name: <br>
-            Name: <br>
-            Name: <br>
-            Name: <br>
+        <!--/.JUST-INTRO END-->
+        <section  class="note-sec" >
+         <div class="container">
+           <div class="row text-center pad-row" >
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
+              <i class="fa fa-quote-left fa-3x"></i>
+              <p>
+                อยากให้ทุกคนช่วยกันบริจาคเลือดดดดด
+              </p>
+            </div>
+          </div>
+        </div>   
+      </section>
 
-          </p>
+      <!--/.CLIENTS END-->
+      <section id="footer-sec" >
 
-        </div>
-        <div class="col-md-4">
-          <h4> <strong>SOCIAL LINKS</strong> </h4>
-          <p>
-           <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
-           <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
-           <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
-           <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
-         </p>
-       </div>
-       <div class="col-md-4">
-         <h4> <strong>OUR LOCATION</strong> </h4>
-         <p>
-           239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 <br/>
-           โทรศัพท์ : 0-5394-3414-16  <br/>
-           โทรสาร : 0-5389-2281 <br/>
-           E-mail : compsci@cmu.ac.th
-         </p>
+        <div class="container">
+         <div class="row  pad-bottom" >
+          <div class="col-md-4">
+            <h4> <strong>Project by</strong> </h4>
+            <p>
+              Name: <br>
+              Name: <br>
+              Name: <br>
+              Name: <br>
+
+            </p>
+
+          </div>
+          <div class="col-md-4">
+            <h4> <strong>SOCIAL LINKS</strong> </h4>
+            <p>
+             <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
+             <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
+             <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
+             <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
+           </p>
+         </div>
+         <div class="col-md-4">
+           <h4> <strong>OUR LOCATION</strong> </h4>
+           <p>
+             239 ถ. ห้วยแก้ว ต.สุเทพ อ. เมือง จ. เชียงใหม่ 50200 <br/>
+             โทรศัพท์ : 0-5394-3414-16  <br/>
+             โทรสาร : 0-5389-2281 <br/>
+             E-mail : compsci@cmu.ac.th
+           </p>
+         </div>
        </div>
      </div>
-   </div>
- </section>         
- <!--/.FOOTER END-->
- <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
- <!-- CORE JQUERY  -->
- <script src="assets/plugins/jquery-1.10.2.js"></script>
- <!-- BOOTSTRAP SCRIPTS  -->
- <script src="assets/plugins/bootstrap.js"></script>
- <!-- CUSTOM SCRIPTS  -->
- <script src="assets/js/custom.js"></script>
-</body>
-</html>
+   </section>         
+   <!--/.FOOTER END-->
+   <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+   <!-- CORE JQUERY  -->
+   <script src="assets/plugins/jquery-1.10.2.js"></script>
+   <!-- BOOTSTRAP SCRIPTS  -->
+   <script src="assets/plugins/bootstrap.js"></script>
+   <!-- CUSTOM SCRIPTS  -->
+   <script src="assets/js/custom.js"></script>
+ </body>
+ </html>

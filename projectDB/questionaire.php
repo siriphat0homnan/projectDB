@@ -69,12 +69,9 @@
                     </tr>
                     <tr>
                       <td>3. ก่อนมาบริจาคฯ ท่านได้รับประทานอาหาร หรือของว่าง<br>
-                        3.1 รับประทาน เวลา <br>
+                        3.1 รับประทานอาหารภายใน 1 ชั่วโมง <br>
                         3.2 ไม่ได้รับประทาน และรู้สึกหิว</td>
                         <td><center><input type="checkbox" name="checkbox3.1" value="yes"></center>
-                          <form action="/action_page.php">
-                            <input type="time" name="timec3">
-                          </form> 
                           <center><input type="checkbox" name="checkbox3.2" value="yes"></center></td>           
                         </tr>
                         <tr>
@@ -145,13 +142,9 @@
                                 <td><center><input type="checkbox" name="checkbox13" value="yes"></center></td>
                               </tr>
                               <tr>
-                                <td>14. ผู้ที่เคยอาศัยหรือเจ็บป่วยอยู่ในประเทศอังกฤษ ระหว่าง พ.ศ.2523-2539<br>
-                                  14.1 พำนักนานกว่า 6 เดือน <br>
-                                  14.2 เคยรับเลือดผู้อื่น
-                                </td>
-                                <td><center><br><input type="checkbox" name="checkbox14.1" value="yes"></center>
-                                  <center><input type="checkbox" name="checkbox14.2" value="yes"></center>
-                                </td>
+                                  <td>14. ท่าน หรือคู่ของท่าน เคยมีพฤติกรรม เพศสัมพันธ์กับหญิงบริการ
+                                    ผู้ฉีดยาเสพติด ชายกับชาย ภายในระยะเวลา 6 เดือน</td>
+                                    <td><center><input type="checkbox" name="checkbox14" value="yes"></center></td>
                               </tr>
                               <tr>
                                 <td><b><u>15. สำหรับสุภาพสตรี</u></b><br>
@@ -187,11 +180,7 @@
                                   <td>21. น้ำหนักลดมากกว่า 5 กิโลกรัม ภายในเวลา 2 เดือน</td>
                                   <td><center><input type="checkbox" name="checkbox21" value="yes"></center></td>
                                 </tr>
-                                <tr>
-                                  <td>22. ท่าน หรือคู่ของท่าน เคยมีพฤติกรรม เพศสัมพันธ์กับหญิงบริการ
-                                    ผู้ฉีดยาเสพติด ชายกับชาย ภายในระยะเวลา 6 เดือน</td>
-                                    <td><center><input type="checkbox" name="checkbox22" value="yes"></center></td>
-                                  </tr>
+                                
                                 </table></h4>
                                 <center><input type="submit"></center>
 

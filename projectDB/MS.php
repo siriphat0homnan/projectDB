@@ -32,42 +32,21 @@
                 <div class="col text-center navbar col-md-12 col-sm-12 " >
                  <p>
                     
-                    <div class="col-md-3">
-                        <div class="row text-left pad-row">
+                    
+                        <div class="row text-center pad-row">
                            <div class="alert alert-info">
-                                <center><h3>ดัชนีมวลกาย</h3></center>
-                            <center><a href="bmi.php"><button class="button_bmi">Calculator BMI</button></a></center>
+                            
+                                <a href="bmi.php"><h3>ดัชนีมวลกาย Calculator BMI</h3></a>
+                            
+                            <a href="bmr.php"><h3>คำนวณการเผาผลาญพลังงาน Calculator BMR</h3></a>
+                            
+                            <a href="ECC.php"><h3>การทำงานของไต Calculator Creatinine Clearance</h3></a>
+                            
                             <br>
                             <br>
                             
                         </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="row text-left pad-row" style="padding-left:5%;">
-                           <div class="alert alert-info">
-                                <center><h3>คำนวณการเผาผลาญพลังงาน</h3></center>
-                            <center><a href="bmr.php"><button class="button_bmi">Calculator BMR</button></a></center>
-                            <br>
-                            <br>
-                            
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5">
-                        <div class="row text-left pad-row" style="padding-left:5%;">
-                           <div class="alert alert-info">
-                                <center><h3>การทำงานของไต</h3></center>
-                            <center><a href="ECC.php"><button class="button_bmi">Calculator Creatinine Clearance</button></a></center>
-                            <br>
-                            <br>
-                            
-                        </div>
-                        </div>
-                    </div>
-
 
                 </div>
             </div>

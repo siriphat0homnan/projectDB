@@ -18,166 +18,166 @@
         <!-- GOOGLE FONT -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-    </head>
-    <body >
+      </head>
+      <body >
         <script>
           function myFunction() {
             var x;
             
             if (document.getElementById('num_blood').value=="" || document.getElementById('num_blood').value==null) { 
-                alert("ยังไม่ได้กรอกปริมาณเลือด");
-                return false;} 
+              alert("ยังไม่ได้กรอกปริมาณเลือด");
+              return false;} 
             }
-        </script>
+          </script>
 
-        <?php
-        session_start();
-        $user = $_SESSION['U'];
-        include 'connect.php';
-        $sql = "select h_name from user where username = '$user' ";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $hos = $row['h_name'];
+          <?php
+          session_start();
+          $user = $_SESSION['U'];
+          include 'connect.php';
+          $sql = "select h_name from user where username = '$user' ";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $hos = $row['h_name'];
 
-        $sql = "select title, f_name, l_name from staff where username = '$user' ";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $title = $row['title'];
-        $f_name = $row['f_name'];
-        $l_name = $row['l_name'];
-
-
-        ?>
-
-        <div class="navbar navbar-inverse navbar-fixed-top" >
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="HostAdmin.php">Admin</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="InputInformation.php">input information</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-    </div>
-
-</div>
-</div>
-<!--/.NAVBAR END-->
-
-<section id="intro">
-  <div class="container ">
-    <div class="col text-center navbar col-md-3 col-sm-3 " >
-     <div class="row text-left pad-row">
-      <div class="alert alert-warning"> 
-        Name Hospital: <?php echo $hos; ?> <p>
-        Name Admin: <?php echo $title.' '.$f_name.' '.$l_name; ?><p>
-    </div>
-
-    <div class="alert alert-warning"> 
-        <center><a href="search.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
-        <center><a href="searchbyname.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
-    </div>
-
-    
-</div>
-</div>
-
-<!-- end left profile admin -->
-
-<?php
-
-$sql = "select h_name,username from user where username <> '$user'";
-$result = $conn->query($sql); 
-?>
-
-<div class="col text-center navbar col-md-5 col-sm-5 " >
+          $sql = "select title, f_name, l_name from staff where username = '$user' ";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $title = $row['title'];
+          $f_name = $row['f_name'];
+          $l_name = $row['l_name'];
 
 
+          ?>
 
-    <form method="post" action="sendblood.php">
-       <div class="row text-left pad-row">
+          <div class="navbar navbar-inverse navbar-fixed-top" >
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="HostAdmin.php">Admin</a>
+              </div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="blog.html">BLOG</a></li>
+                  <li><a href="InputInformation.php">input information</a></li>
+                  <li><a href="logout.php">Logout</a></li>
+                </ul>
+              </div>
 
-           <div class="alert alert-warning"> 
-              โรงพยาบาล:
-              <select id="hospital" name="hospital">
+            </div>
+          </div>
+          <!--/.NAVBAR END-->
 
-                <?php
-                $i = 1;
-                while ($row=$result->fetch_assoc()) {
-                  $name = $row['h_name'];
-                  echo '<option value="'.$row['username'].'">';
-                  echo $name."</option>";
-                  $i++;
-              }
+          <section id="intro">
+            <div class="container ">
+              <div class="col text-center navbar col-md-3 col-sm-3 " >
+               <div class="row text-left pad-row">
+                <div class="alert alert-warning"> 
+                  Name Hospital: <?php echo $hos; ?> <p>
+                  Name Admin: <?php echo $title.' '.$f_name.' '.$l_name; ?><p>
+                </div>
 
-              ?>
+                <div class="alert alert-warning"> 
+                  <center><a href="search.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
+                  <center><a href="searchbyname.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
+                </div>
 
-          </select>
-
-      </div>
-
-
-      <div class="alert alert-warning">
-          กรุ๊ปเลือด:  
-
-          <select id="hospital" name="blood_type">
-              <option  value="O_vol">O</option>
-              <option value="A_vol">A</option>
-              <option value="B_vol">B</option>
-              <option value="AB_vol">AB</option>
-              <option value="O_neg_vol">O-</option>
-              <option value="A_neg_vol">A-</option>
-              <option value="B_neg_vol">B-</option>
-              <option value="AB_neg_vol">AB-</option>
-
-          </select>
-
-      </div>
-
-      <div class="alert alert-warning">
-          กรอกจำนวนเลือด(ml):  <input type="text" id="num_blood" name="num_blood">
-
-      </div>
-
-      <div class="alert alert-warning">
-          ยืนยัน:  <input type="submit" value="Submit" name="submit">
-
-      </div>
-
-      <div class="alert alert-warning"> 
-        <div div id="" style="overflow-y: scroll; height:130px;">
-            <?php
-                include 'connect.php';
-                $sql = "SELECT sender_name, recipient_name, date_time, blood_send, volume FROM transfer";
-                $result = $conn->query($sql);
                 
-                while ($row = $result->fetch_assoc()) {
-                    echo $row["sender_name"]." ไปยัง ".$row["recipient_name"]." ".$row["date_time"]."  ".$row["blood_send"]."  ".$row["volume"]."<br>";
-                }
+              </div>
+            </div>
+
+            <!-- end left profile admin -->
+
+            <?php
+
+            $sql = "select h_name,username from user where username <> '$user'";
+            $result = $conn->query($sql); 
             ?>
-        </div>
-    </div> 
+
+            <div class="col text-center navbar col-md-5 col-sm-5 " >
 
 
 
-  </div>
-</div>
-</from>
+              <form method="post" action="sendblood.php">
+               <div class="row text-left pad-row">
 
-<!-- center profile -->
+                 <div class="alert alert-warning"> 
+                  โรงพยาบาล:
+                  <select id="hospital" name="hospital">
 
-<?php
+                    <?php
+                    $i = 1;
+                    while ($row=$result->fetch_assoc()) {
+                      $name = $row['h_name'];
+                      echo '<option value="'.$row['username'].'">';
+                      echo $name."</option>";
+                      $i++;
+                    }
 
-$sql2= "select * from hospital inner join user on hospital.h_name=user.h_name where username = '$user'";
-$result2 = $conn->query($sql2); 
-$row = $result2->fetch_assoc();
+                    ?>
+
+                  </select>
+
+                </div>
+
+
+                <div class="alert alert-warning">
+                  กรุ๊ปเลือด:  
+
+                  <select id="hospital" name="blood_type">
+                    <option  value="O_vol">O</option>
+                    <option value="A_vol">A</option>
+                    <option value="B_vol">B</option>
+                    <option value="AB_vol">AB</option>
+                    <option value="O_neg_vol">O-</option>
+                    <option value="A_neg_vol">A-</option>
+                    <option value="B_neg_vol">B-</option>
+                    <option value="AB_neg_vol">AB-</option>
+
+                  </select>
+
+                </div>
+
+                <div class="alert alert-warning">
+                  กรอกจำนวนเลือด(ml):  <input type="text" id="num_blood" name="num_blood">
+
+                </div>
+
+                <div class="alert alert-warning">
+                  ยืนยัน:  <input type="submit" value="Submit" name="submit">
+
+                </div>
+
+                <div class="alert alert-warning"> 
+                  <div div id="" style="overflow-y: scroll; height:130px;">
+                    <?php
+                    include 'connect.php';
+                    $sql = "SELECT sender_name, recipient_name, date_time, blood_send, volume FROM transfer";
+                    $result = $conn->query($sql);
+                    
+                    while ($row = $result->fetch_assoc()) {
+                      echo $row["sender_name"]." ไปยัง ".$row["recipient_name"]." ".$row["date_time"]."  ".$row["blood_send"]."  ".$row["volume"]."<br>";
+                    }
+                    ?>
+                  </div>
+                </div> 
+
+
+
+              </div>
+            </div>
+          </from>
+
+          <!-- center profile -->
+
+          <?php
+
+          $sql2= "select * from hospital inner join user on hospital.h_name=user.h_name where username = '$user'";
+          $result2 = $conn->query($sql2); 
+          $row = $result2->fetch_assoc();
         /*  while( $row = $result2->fetch_assoc()){
         
          // echo $row['A_vol'];
@@ -203,109 +203,109 @@ $row = $result2->fetch_assoc();
           <div class="col-md-12">
             <div class="row text-center pad-row">
               <div class="alert alert-success">
-                 <?php
-                 echo '<div class="skill-name">Group O- '.ceil($on/$div * 100)."%</div>"; 
-                 ?> 
-                 <div class="progress progress-striped active progress-adjust">
-                  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($on/$div * 100); ?>%">
-                   <span class="sr-only">100% Complete</span>
-                   <?php echo ($on); ?>
+               <?php
+               echo '<div class="skill-name">Group O- '.ceil($on/$div * 100)."%</div>"; 
+               ?> 
+               <div class="progress progress-striped active progress-adjust">
+                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($on/$div * 100); ?>%">
+                 <span class="sr-only">100% Complete</span>
+                 <?php echo ($on); ?>
 
                </div>
 
+             </div>
+
            </div>
 
-       </div>
+           <div class="alert alert-success">
+            <?php             echo '<div class="skill-name">Group A- '.ceil($an/$div * 100).'%</div>' ;  ?> 
+            <div class="progress progress-striped active progress-adjust">
+              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($an/$div * 100); ?>%">
+                <span class="sr-only">100% Complete</span>
+                <?php echo ($an); ?>
 
-       <div class="alert alert-success">
-        <?php             echo '<div class="skill-name">Group A- '.ceil($an/$div * 100).'%</div>' ;  ?> 
-        <div class="progress progress-striped active progress-adjust">
-            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($an/$div * 100); ?>%">
-              <span class="sr-only">100% Complete</span>
-              <?php echo ($an); ?>
+              </div>
+            </div>
 
           </div>
-      </div>
 
-  </div>
+          <div class="alert alert-success">
+            <?php            echo  '<div class="skill-name">Group B- '.ceil($bn/$div * 100).'%</div>'; ?> 
+            <div class="progress progress-striped active progress-adjust">
+              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"            aria-valuemax="100" style="width: <?php echo ceil($bn/$div * 100); ?>%">
+                <span class="sr-only">100% Complete</span>
+                <?php echo ($bn); ?>
+              </div>
+            </div>
 
-  <div class="alert alert-success">
-    <?php            echo  '<div class="skill-name">Group B- '.ceil($bn/$div * 100).'%</div>'; ?> 
-    <div class="progress progress-striped active progress-adjust">
-        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"            aria-valuemax="100" style="width: <?php echo ceil($bn/$div * 100); ?>%">
-          <span class="sr-only">100% Complete</span>
-          <?php echo ($bn); ?>
-      </div>
-  </div>
+          </div>
 
-</div>
+          <div class="alert alert-success">
+            <?php          echo   '<div class="skill-name">Group AB- '.ceil($abn/$div * 100).'%</div>' ; ?> 
+            <div class="progress progress-striped active progress-adjust">
+              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"               aria-valuemax="100" style="width: <?php echo ceil($abn/$div * 100); ?>%">
+                <span class="sr-only">100% Complete</span>
+                <?php echo ($abn); ?>
+              </div>
+            </div>
 
-<div class="alert alert-success">
-    <?php          echo   '<div class="skill-name">Group AB- '.ceil($abn/$div * 100).'%</div>' ; ?> 
-    <div class="progress progress-striped active progress-adjust">
-      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"               aria-valuemax="100" style="width: <?php echo ceil($abn/$div * 100); ?>%">
-        <span class="sr-only">100% Complete</span>
-        <?php echo ($abn); ?>
-    </div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-<div class="col text-center navbar-right col-md-2 col-sm-2" >
-  <p>
-   <div class="col-md-16">
-     <div class="col text-center pad-row">
-       <div class="alert alert-success">
-        <?php            echo '<div class="skill-name">Group O '.ceil($o/$div * 100).'%</div>'   ?> 
-        <div class="progress progress-striped active progress-adjust">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($o/$div * 100); ?>%">
-            <span class="sr-only">100% Complete</span>
-            <?php echo ($o); ?>
+          </div>
         </div>
+      </div>
     </div>
 
-</div>
 
-<div class="alert alert-success">
-    <?php         echo  '<div class="skill-name">Group A '.ceil($a/$div * 100).'%</div>'; ?> 
-    <div class="progress progress-striped active progress-adjust">
-        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($a/$div * 100); ?>%">
-          <span class="sr-only">100% Complete</span>
-          <?php echo ($a); ?>
+
+    <div class="col text-center navbar-right col-md-2 col-sm-2" >
+      <p>
+       <div class="col-md-16">
+         <div class="col text-center pad-row">
+           <div class="alert alert-success">
+            <?php            echo '<div class="skill-name">Group O '.ceil($o/$div * 100).'%</div>'   ?> 
+            <div class="progress progress-striped active progress-adjust">
+              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($o/$div * 100); ?>%">
+                <span class="sr-only">100% Complete</span>
+                <?php echo ($o); ?>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="alert alert-success">
+            <?php         echo  '<div class="skill-name">Group A '.ceil($a/$div * 100).'%</div>'; ?> 
+            <div class="progress progress-striped active progress-adjust">
+              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($a/$div * 100); ?>%">
+                <span class="sr-only">100% Complete</span>
+                <?php echo ($a); ?>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="alert alert-success">
+           <div class="skill-name">Group B <?php echo ceil($b/$div * 100); ?>%</div> 
+           <div class="progress progress-striped active progress-adjust">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($b/$div * 100); ?>%">
+              <span class="sr-only">100% Complete</span>
+              <?php echo ($b); ?>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="alert alert-success">
+         <div class="skill-name">Group AB <?php echo ceil($ab/$div * 100); ?>%</div> 
+         <div class="progress progress-striped active progress-adjust">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($ab/$div * 100); ?>%">
+            <span class="sr-only">100% Complete</span>
+            <?php echo ($ab); ?>
+          </div>
+        </div>
+
       </div>
+
+    </div>
   </div>
-
-</div>
-
-<div class="alert alert-success">
- <div class="skill-name">Group B <?php echo ceil($b/$div * 100); ?>%</div> 
- <div class="progress progress-striped active progress-adjust">
-  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($b/$div * 100); ?>%">
-    <span class="sr-only">100% Complete</span>
-    <?php echo ($b); ?>
-</div>
-</div>
-
-</div>
-
-<div class="alert alert-success">
-   <div class="skill-name">Group AB <?php echo ceil($ab/$div * 100); ?>%</div> 
-   <div class="progress progress-striped active progress-adjust">
-    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($ab/$div * 100); ?>%">
-      <span class="sr-only">100% Complete</span>
-      <?php echo ($ab); ?>
-  </div>
-</div>
-
-</div>
-
-</div>
-</div>
 </div>
 </div>
 </section>

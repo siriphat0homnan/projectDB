@@ -35,13 +35,13 @@
                     
                         <div class="row text-center pad-row">
                            <div class="alert alert-info">
+                            <font face="Comic sans MS" size="3">
+                                <a href="bmi.php">ดัชนีมวลกาย Calculator BMI</a><br><br>
                             
-                                <a href="bmi.php"><h3>ดัชนีมวลกาย Calculator BMI</h3></a>
+                            <a href="bmr.php">คำนวณการเผาผลาญพลังงาน Calculator BMR</a><br><br>
                             
-                            <a href="bmr.php"><h3>คำนวณการเผาผลาญพลังงาน Calculator BMR</h3></a>
-                            
-                            <a href="ECC.php"><h3>การทำงานของไต Calculator Creatinine Clearance</h3></a>
-                            
+                            <a href="ECC.php">การทำงานของไต Calculator Creatinine Clearance</a><br><br>
+                            </font>
                             <br>
                             <br>
                             

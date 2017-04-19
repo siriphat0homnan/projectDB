@@ -109,6 +109,70 @@ session_start();
             <h2>การกรอกข้อมูลและวินิจฉัยผู้บริจาคเสร็จเรียบร้อยแล้ว</h2>
             <a href="HostAdmin.php">กลับไปยังหน้าหลัก</a>
 
+            <?php
+
+            include "connect.php";
+
+
+            $cid = $_SESSION['idnum'];
+            $curryear = date('year');
+            
+            $age1 = $_SESSION['age'];
+
+            $weight = $_SESSION['weight'];
+            $vol = $_SESSION['w'];
+            $idnum = $_SESSION['idnum'];
+
+            $sqlcount = "(select count(dd.cid)+1 FROM donor_donation as dd WHERE dd.cid = '$idnum')";
+
+            // echo $sqlcount."\n";
+
+            $count = $conn->query($sqlcount);
+
+            $datetime = date("Y-m-d");
+            // echo $datetime;
+
+            $ssn = "(SELECT D.ssn FROM staff as S, donor_donation as D WHERE D.ssn = S.ssn)";
+
+            $sql1 = 'INSERT INTO donor_donation (h_name, cid, age, weight, vol_blood, count, date_time) VALUES ("สภากาชาดไทย", "'.$cid.'", '.$age1.', '.$weight.', '.$vol.', '.$sqlcount.', "'.$datetime.'")';
+
+            // echo $sql1."\n";
+
+            // if ( $conn->query($sql1)===TRUE ){
+            //   echo "insert complete";
+            // }else{
+            //   echo "insert incomplete";
+            // }
+
+            $bloodtypeSQL = "select * FROM donor as D WHERE D.cid = '$idnum'";
+          //  $blood_type = $conn->query(bloodtypeSQL);
+           // echo "\n".$bloodtypeSQL."\n";
+            
+          $result = $conn->query($bloodtypeSQL);
+          $ans = $result->fetch_assoc();
+          $bloodtype = $ans['blood_type'];
+
+
+            if (strcmp($bloodtype, "A") == 0) {$blood = "A_vol";}
+            if (strcmp($bloodtype, "B") == 0) {$blood = "B_vol";}
+            if (strcmp($bloodtype, "O") == 0) {$blood = "O_vol";}
+            if (strcmp($bloodtype, "AB") == 0) {$blood = "AB_vol";}
+            if (strcmp($bloodtype, "A-") == 0) {$blood = "A_neg_vol";}
+            if (strcmp($bloodtype, "B-") == 0) {$blood = "B_neg_vol";}
+            if (strcmp($bloodtype, "O-") == 0) {$blood = "O_neg_vol";}
+            if (strcmp($bloodtype, "AB-") == 0) {$blood = "AB_neg_vol";}
+
+            $SQL2 = "update hospital set $blood = $blood + $vol where h_name = 'สภากาชาดไทย'";
+            // echo $SQL2;
+            $conn->query($SQL2)
+
+            // if ($conn->query($SQL2) === TRUE ){
+            //   echo "update complete";
+            // }else{
+            //   echo "update incomplete";
+            // }
+            ?>
+
           </div>
 
         </section>

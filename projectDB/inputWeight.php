@@ -97,7 +97,8 @@ session_start();
         <section id="intro">
           <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 5%;padding-bottom: 20%; background-color: #F9D9D9; width: 100%; height: 100%;">
           <form method="get" action="calBlood.php">
-              <p>กรุณาใส่น้ำหนัก: <input type="number" name="weight"></p>
+              <p>กรุณาใส่อายุ: <input type="number" name="age"></p>
+              <p>กรุณาใส่น้ำหนัก: <input type="float" name="weight"></p>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
 

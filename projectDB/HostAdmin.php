@@ -39,12 +39,14 @@
           $row = $result->fetch_assoc();
           $hos = $row['h_name'];
 
-          $sql = "select title, f_name, l_name from staff where username = '$user' ";
+          $sql = "select title, f_name, l_name, position, email from staff where username = '$user' ";
           $result = $conn->query($sql);
           $row = $result->fetch_assoc();
           $title = $row['title'];
           $f_name = $row['f_name'];
           $l_name = $row['l_name'];
+          $position = $row['position'];
+          $email = $row['email'];
 
 
           ?>
@@ -75,14 +77,16 @@
             <div class="container ">
               <div class="col text-center navbar col-md-3 col-sm-3 " >
                <div class="row text-left pad-row">
-                <div class="alert alert-warning"> 
-                  Name Hospital: <?php echo $hos; ?> <p>
-                  Name Admin: <?php echo $title.' '.$f_name.' '.$l_name; ?><p>
+                <div class="alert alert-warning" style="border: 2px solid black;"> 
+                  <font color="black"> Name Hospital: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $hos; ?></u></font> <br>
+                  <font color="black">Name Admin: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $title.' '.$f_name.' '.$l_name; ?></u></font><br>
+                  <font color="black">Position:</font> <font color="black"  style=" margin-left: 4%;" ><u><?php echo $position  ?></u></font><br>
+                  <font color="black">Email: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $email  ?></u></font>
                 </div>
 
-                <div class="alert alert-warning"> 
-                  <center><a href="search.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
-                  <center><a href="searchbyname.php"><button>แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
+                <div class="alert alert-warning" style="border: 2px solid black;"> 
+                  <center><a href="search.php" ><button style="border: 2px solid black;">แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
+                  <center><a href="searchbyname.php"><button style="border: 2px solid black;">แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
                 </div>
 
 
@@ -97,16 +101,16 @@
             $result = $conn->query($sql); 
             ?>
 
-            <div class="col text-center navbar col-md-5 col-sm-5 " >
+            <div class="col text-center navbar col-md-4 col-sm-4" style="width: 35%; margin-left: 5%">
 
 
 
               <form method="post" action="sendblood.php">
                <div class="row text-left pad-row">
 
-                 <div class="alert alert-warning"> 
+                 <div class="alert alert-warning" style="border: 2px solid black;" > 
                   โรงพยาบาล:
-                  <select id="hospital" name="hospital">
+                  <select id="hospital" name="hospital" style="border: 2px solid black; width: 60%; margin-left: 5%">
 
                     <?php
                     $i = 1;
@@ -124,10 +128,10 @@
                 </div>
 
 
-                <div class="alert alert-warning">
+                <div class="alert alert-warning" style="border: 2px solid black;">
                   กรุ๊ปเลือด:  
 
-                  <select id="hospital" name="blood_type">
+                  <select id="hospital" name="blood_type" style="border: 2px solid black; margin-left: 9%">
                     <option  value="O_vol">O</option>
                     <option value="A_vol">A</option>
                     <option value="B_vol">B</option>
@@ -141,17 +145,17 @@
 
                 </div>
 
-                <div class="alert alert-warning">
-                  กรอกจำนวนเลือด(ml):  <input type="text" id="num_blood" name="num_blood">
+                <div class="alert alert-warning" style="border: 2px solid black;">
+                  กรอกจำนวนเลือด(ml):  <input type="text" id="num_blood" name="num_blood" style="border: 2px solid black;">
 
                 </div>
 
-                <div class="alert alert-warning">
-                  ยืนยัน:  <input type="submit" value="Submit" name="submit">
+                <div class="alert alert-warning" style="border: 2px solid black;">
+                  ยืนยัน:  <input type="submit" value="Submit" name="submit" style="border: 2px solid black; margin-left: 15%">
 
                 </div>
 
-                <div class="alert alert-warning"> 
+                <div class="alert alert-warning" style="border: 2px solid black;"> 
                   <div div id="" style="overflow-y: scroll; height:130px;">
                     <?php
                     include 'connect.php';
@@ -202,7 +206,7 @@
          <p>
           <div class="col-md-12">
             <div class="row text-center pad-row">
-              <div class="alert alert-success">
+              <div class="alert alert-success" style="border: 2px solid black;">
                <?php
                echo '<div class="skill-name">Group O- '.ceil($on/$div * 100)."%</div>"; 
                ?> 
@@ -219,7 +223,7 @@
 
            </div>
 
-           <div class="alert alert-success">
+           <div class="alert alert-success" style="border: 2px solid black;">
             <?php             echo '<div class="skill-name">Group A- '.ceil($an/$div * 100).'%</div>' ;  ?> 
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($an/$div * 100); ?>%">
@@ -233,7 +237,7 @@
 
           </div>
 
-          <div class="alert alert-success">
+          <div class="alert alert-success" style="border: 2px solid black;">
             <?php            echo  '<div class="skill-name">Group B- '.ceil($bn/$div * 100).'%</div>'; ?> 
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"            aria-valuemax="100" style="width: <?php echo ceil($bn/$div * 100); ?>%">
@@ -246,7 +250,7 @@
 
           </div>
 
-          <div class="alert alert-success">
+          <div class="alert alert-success" style="border: 2px solid black;">
             <?php          echo   '<div class="skill-name">Group AB- '.ceil($abn/$div * 100).'%</div>' ; ?> 
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"               aria-valuemax="100" style="width: <?php echo ceil($abn/$div * 100); ?>%">
@@ -268,7 +272,7 @@
       <p>
        <div class="col-md-16">
          <div class="col text-center pad-row">
-           <div class="alert alert-success">
+           <div class="alert alert-success" style="border: 2px solid black;">
             <?php            echo '<div class="skill-name">Group O '.ceil($o/$div * 100).'%</div>'   ?> 
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($o/$div * 100); ?>%">
@@ -281,7 +285,7 @@
 
           </div>
 
-          <div class="alert alert-success">
+          <div class="alert alert-success" style="border: 2px solid black;">
             <?php         echo  '<div class="skill-name">Group A '.ceil($a/$div * 100).'%</div>'; ?> 
             <div class="progress progress-striped active progress-adjust">
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($a/$div * 100); ?>%">
@@ -294,7 +298,7 @@
 
           </div>
 
-          <div class="alert alert-success">
+          <div class="alert alert-success" style="border: 2px solid black;">
            <div class="skill-name">Group B <?php echo ceil($b/$div * 100); ?>%</div> 
            <div class="progress progress-striped active progress-adjust">
             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($b/$div * 100); ?>%">
@@ -307,7 +311,7 @@
 
         </div>
 
-        <div class="alert alert-success">
+        <div class="alert alert-success" style="border: 2px solid black;">
          <div class="skill-name">Group AB <?php echo ceil($ab/$div * 100); ?>%</div> 
          <div class="progress progress-striped active progress-adjust">
           <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($ab/$div * 100); ?>%">

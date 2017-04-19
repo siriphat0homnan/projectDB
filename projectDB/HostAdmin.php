@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="alert alert-warning" style="border: 2px solid black;">
-                  ยืนยัน:  <input type="submit" value="Submit" name="submit" style="border: 2px solid black; margin-left: 15%">
+                  ยืนยัน:  <input type="submit" value="Submit" name="submit" style="border: 2px solid black; margin-left: 15%"  onclick="return confirm('Are you sure?');">
 
                 </div>
 

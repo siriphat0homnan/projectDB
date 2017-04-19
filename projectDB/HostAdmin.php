@@ -84,7 +84,7 @@
                   <font color="black">Email: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $email  ?></u></font>
                 </div>
 
-                <div class="alert alert-warning" style="border: 2px solid black;"> 
+                <div class="alert alert-warning " style="border: 2px solid black;"> 
                   <center><a href="search.php" ><button style="border: 2px solid black;">แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากเลขบัตรประจำตัวประชาชน</button></a></center><br>
                   <center><a href="searchbyname.php"><button style="border: 2px solid black;">แก้ไขข้อมูลผู้บริจาคโดยค้นหาจากชื่อ</button></a></center>
                 </div>
@@ -154,20 +154,9 @@
                   ยืนยัน:  <input type="submit" value="Submit" name="submit" style="border: 2px solid black; margin-left: 15%"  onclick="return confirm('Are you sure?');">
 
                 </div>
+                <br><br>
 
-                <div class="alert alert-warning" style="border: 2px solid black;"> 
-                  <div div id="" style="overflow-y: scroll; height:130px;">
-                    <?php
-                    include 'connect.php';
-                    $sql = "SELECT sender_name, recipient_name, date_time, blood_send, volume FROM transfer";
-                    $result = $conn->query($sql);
 
-                    while ($row = $result->fetch_assoc()) {
-                      echo $row["sender_name"]." ไปยัง ".$row["recipient_name"]." ".$row["date_time"]."  ".$row["blood_send"]."  ".$row["volume"]."<br>";
-                    }
-                    ?>
-                  </div>
-                </div> 
 
 
 
@@ -214,7 +203,7 @@
                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($on/$div * 100); ?>%">
                  <span class="sr-only">100% Complete</span>
                  <font color="black">
-                 <?php echo ($on); ?>
+                   <?php echo ($on); ?>
                  </font>
 
                </div>
@@ -229,7 +218,7 @@
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($an/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
                 <font color="black">
-                <?php echo ($an); ?>
+                  <?php echo ($an); ?>
                 </font>
 
               </div>
@@ -243,7 +232,7 @@
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"            aria-valuemax="100" style="width: <?php echo ceil($bn/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
                 <font color="black">
-                <?php echo ($bn); ?>
+                  <?php echo ($bn); ?>
                 </font>
               </div>
             </div>
@@ -256,7 +245,7 @@
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100"    aria-valuemin="0"               aria-valuemax="100" style="width: <?php echo ceil($abn/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
                 <font color="black">
-                <?php echo ($abn); ?>
+                  <?php echo ($abn); ?>
                 </font>
               </div>
             </div>
@@ -278,7 +267,7 @@
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($o/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
                 <font color="black">
-                <?php echo ($o); ?>
+                  <?php echo ($o); ?>
                 </font>
               </div>
             </div>
@@ -291,7 +280,7 @@
               <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($a/$div * 100); ?>%">
                 <span class="sr-only">100% Complete</span>
                 <font color="black">
-                <?php echo ($a); ?>
+                  <?php echo ($a); ?>
                 </font>
               </div>
             </div>
@@ -304,7 +293,7 @@
             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($b/$div * 100); ?>%">
               <span class="sr-only">100% Complete</span>
               <font color="black">
-              <?php echo ($b); ?>
+                <?php echo ($b); ?>
               </font>
             </div>
           </div>
@@ -317,7 +306,7 @@
           <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ceil($ab/$div * 100); ?>%">
             <span class="sr-only">100% Complete</span>
             <font color="black">
-            <?php echo ($ab); ?>
+              <?php echo ($ab); ?>
             </font>
           </div>
         </div>
@@ -328,6 +317,21 @@
   </div>
 </div>
 </div>
+<center>
+<div class="alert alert-warning text-center" style="border: 2px solid black; width: 80%;"> 
+  <div div id="" style="overflow-y: scroll; height:130px;">
+    <?php
+    include 'connect.php';
+    $sql = "SELECT sender_name, recipient_name, date_time, blood_send, volume FROM transfer";
+    $result = $conn->query($sql);
+
+    while ($row = $result->fetch_assoc()) {
+      echo " จาก ".$row["sender_name"]." ไปยัง ".$row["recipient_name"]." ณ.วันที่ ".$row["date_time"]." กรุ๊ป ".$row["blood_send"]." จำนวน ".$row["volume"]."<br>";
+    }
+    ?>
+  </div>
+</div> 
+</center>
 </section>
 
 <!--/.JUST-INTRO END-->

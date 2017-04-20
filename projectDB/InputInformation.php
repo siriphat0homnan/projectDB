@@ -109,7 +109,7 @@
         <section id="intro">
           <div class="col text-left navbar col-md-12 col-sm-12">
             <div style="border: 1px solid #F9D9D9; padding-left: 10%; padding-top: 1%; background-color: #F9D9D9;">
-              <br><u><h3>ข้อมูลผู้บริจาค</h3></u> <br>
+              <br><u><h3 style="margin-left: 20%;">ข้อมูลผู้บริจาค</h3></u> <br>
             </div>
 
             <form method="post" name="myForm" action="data.php" onsubmit="return validateForm();" >

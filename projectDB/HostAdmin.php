@@ -39,7 +39,8 @@
           $row = $result->fetch_assoc();
           $hos = $row['h_name'];
 
-          $sql = "select title, f_name, l_name, position, email from staff where username = '$user' ";
+          $sql = "select title, f_name, l_name, position, email from staff where ssn = '".$_SESSION['S']."' ";
+          
           $result = $conn->query($sql);
           $row = $result->fetch_assoc();
           $title = $row['title'];
@@ -63,7 +64,7 @@
               </div>
               <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="blog.html">BLOG</a></li>
+                  <li><a href="blog.php">BLOG</a></li>
                   <li><a href="InputInformation.php">input information</a></li>
                   <li><a href="logout.php">Logout</a></li>
                 </ul>
@@ -78,6 +79,7 @@
               <div class="col text-center navbar col-md-3 col-sm-3 " >
                <div class="row text-left pad-row">
                 <div class="alert alert-warning" style="border: 2px solid black;"> 
+                  <?php   //echo $sql."\n"; ?>
                   <font color="black"> Name Hospital: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $hos; ?></u></font> <br>
                   <font color="black">Name Admin: </font> <font color="black" style=" margin-left: 4%;"><u><?php echo $title.' '.$f_name.' '.$l_name; ?></u></font><br>
                   <font color="black">Position:</font> <font color="black"  style=" margin-left: 4%;" ><u><?php echo $position  ?></u></font><br>

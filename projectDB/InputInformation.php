@@ -95,7 +95,7 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="blog.php">BLOG</a></li>
 
                 <li><a href="input_informationA.php">input information</a></li>
                 <li><a href="logout.php">Logout</a></li>

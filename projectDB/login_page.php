@@ -119,6 +119,7 @@
             <form method="post" action="login.php" name="myForm" onsubmit="return validateForm();"">
 
               <fieldset class="clearfix">
+              <p><span class="fontawesome-user"></span><input type="text" name = "ssn" value="SSN" onBlur="if(this.value == '') this.value = 'SSN'" onFocus="if(this.value == 'SSN') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
 
                 <p><span class="fontawesome-user"></span><input type="text" name = "username" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
                 <p><span class="fontawesome-lock"></span><input type="password"  name = "pass" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->

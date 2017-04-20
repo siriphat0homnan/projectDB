@@ -17,6 +17,7 @@ session_start();
 
 $user = $_POST['username'];
 $pass = $_POST['pass'];
+$temp = $_POST['ssn'];
 
 
 
@@ -38,7 +39,7 @@ if ($conn->connect_error) {
     die ("Connection failed: ".$conn->connect_error);
 }
 
-$sql = "select * from user";
+$sql = "select * from user inner join staff on user.h_name = staff.h_name";
 
 $result = $conn->query($sql);
 
@@ -47,12 +48,14 @@ $sw=0;
 while ($row = $result->fetch_assoc()) {
     $username = $row['username'];
     $password = $row['password'];
+    $ssn = $row['ssn'];
 
-    if ( strcmp($user,$username)==0 && strcmp($pass,$password)==0 ){
+    if ( strcmp($user,$username)==0 && strcmp($pass,$password)==0 &&strcmp($temp,$ssn)==0){
         $sw = 1;
         $conn->close();
         $_SESSION['U'] = $user;
         $_SESSION['P'] = $pass;
+        $_SESSION['S'] = $temp;
         break;
     }
 }

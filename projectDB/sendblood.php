@@ -25,7 +25,7 @@ $contain = $conn->query($contain_blood);
 $row = $contain->fetch_assoc();
 echo $input_blood.' '.$row[$blood]."<br>";
 
-if ($input_blood <= $row[$blood]) {
+if ($input_blood <= $row[$blood] && $input_blood >= 0) {
 
     $SQL1 = "UPDATE hospital, user set $blood = $blood - $num where (username = '$user') and (user.h_name = hospital.h_name)";
     echo $SQL1."<br>";

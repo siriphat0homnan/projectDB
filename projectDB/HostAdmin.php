@@ -117,7 +117,7 @@
                     $i = 1;
                     while ($row=$result->fetch_assoc()) {
                       $name = $row['h_name'];
-                      echo '<option value="'.$row['username'].'">';
+                      echo '<option value="'.$row['username'].'">';   
                       echo $name."</option>";
                       $i++;
                     }

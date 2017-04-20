@@ -120,101 +120,80 @@
                 <h2 style="padding-left:2%;">Blood Blog</h2>
                 <p style="padding-right: 5%">
                     <div align="right">
-                        <a href="form_question.html" style="align-items: right;">
+                        <a href="form_question.php" style="align-items: right;">
                             <button class="button button1" >ตั้งกระทู้</button>
                         </a></div>
                     </p>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ลำดับ</th>
-                                <th>ชื่อกระทู้</th>
-                                <th>ชื่อผู้เขียน</th>
-                                <th>จำนวนคำตอบ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            include('connect.php');
-                            $sql = "select * from webboard";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
 
+                    <?php
+                    include('connect.php');
+                    $sql = "select * from webboard";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        echo "<table width=532 border=1 align=center bordercolor=0000FF>";
+                        echo "<tr>";
+                        echo "<td>";
+                        echo "<table width=532 align=center bordercolor=0000FF>";
+                        echo "<tr bgcolor=222222>";
+                        echo "<td align = center><font color=FFFFFF><b>รหัสกระทู้</b></font></td>";
+                        echo "<td align = center><font color=FFFFFF><b>หัวข้อกระทู้</b></font></td>";
+                        echo "<td align = center><font color=FFFFFF><b>ผู้ตั้งกระทู้</b></font></td>";
+                        echo "<td align = center><font color=FFFFFF><b>วันที่ตั้งกระทู้</b></font></td>";
+                        echo "</tr>";
 
-                                while ($row=$result->fetch_assoc()) {
-                                    $bid = $row['bid'];
-                                    $topic = $row['topic'];
-                                   
-                                    $detail = $row['detail'];
-                                    $date_q = $row['w_date'];
+                        while ($row=$result->fetch_assoc()) {
+                            $bid = $row['bid'];
+                            $topic = $row['topic'];
+                            $name = $row['name'];
+                            $date_q = $row['w_date'];
 
-                                    echo $bid, $topic, $detail, $date_q;
-                            }
+                            echo "<tr bgcolor=CCCCCC>
+                                <td align = center>$bid</td>
+                                <td align = center><a href='ans.php?bid=$bid'>$topic</a></td>
+                                <td align = center>$name</td>
+                                <td align = center>$date_q</td>
+                                </tr>";
                         }
-                        
+                    }
+                    $conn->close();
+                    echo "
+                </td>
+            </tr>
+        </table>";
+        ?>
+        <!-- แถบหน้า -->
+        <center>
+            <div class="pagination">
+              <a href="#">&laquo;</a>
+              <a class="active" href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">&raquo;</a>
+          </div>
+      </center>
+      <!-- asdfghjkl -->
+      <script>
+        $.validate({
+            modules: 'security, file',
+            onModulesLoaded: function() {
+                $('input[name="pass_confirmation"]').displayPasswordStrength();
+            }
+        });
+    </script>
+</section>
+<!--/.JUST-INTRO END-->
 
-                        
-                        $conn->close();
-                        echo "
-                    </td>
-                </tr>
-            </table>";
+<!--/.CLIENTS END-->
+<?php include "footer.php" ?> 
+<!--/.FOOTER END-->
+<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY  -->
+<script src="assets/plugins/jquery-1.10.2.js"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script src="assets/plugins/bootstrap.js"></script>
+<!-- CUSTOM SCRIPTS  -->
+<script src="assets/js/custom.js"></script>
+</body>
 
-
-            ?>
-                            <!-- <tr>
-                                <td>1</td>
-                                <td><a href="blog1.php">เป็นหวัด บริจาคเลือดได้มั้ยครับ</td>
-                                <td>สมหยอย</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>เชียงใหม่บริจาคเลือดที่ไหนได้บ้างครับ</td>
-                                <td>สมอยสี</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>อะไรก็ได้</td>
-                                <td>ตรีวิทส์</td>
-                                <td>4</td>
-                            </tr> -->
-                        </tbody>
-                    </table>
-                    <!-- แถบหน้า -->
-                    <center>
-                        <div class="pagination">
-                          <a href="#">&laquo;</a>
-                          <a class="active" href="#">1</a>
-                          <a href="#">2</a>
-                          <a href="#">3</a>
-                          <a href="#">4</a>
-                          <a href="#">&raquo;</a>
-                      </div>
-                  </center>
-                  <!-- asdfghjkl -->
-                  <script>
-                    $.validate({
-                        modules: 'security, file',
-                        onModulesLoaded: function() {
-                            $('input[name="pass_confirmation"]').displayPasswordStrength();
-                        }
-                    });
-                </script>
-            </section>
-            <!--/.JUST-INTRO END-->
-            
-            <!--/.CLIENTS END-->
-            <?php include "footer.php" ?> 
-            <!--/.FOOTER END-->
-            <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-            <!-- CORE JQUERY  -->
-            <script src="assets/plugins/jquery-1.10.2.js"></script>
-            <!-- BOOTSTRAP SCRIPTS  -->
-            <script src="assets/plugins/bootstrap.js"></script>
-            <!-- CUSTOM SCRIPTS  -->
-            <script src="assets/js/custom.js"></script>
-        </body>
-
-        </html>
+</html>

@@ -165,7 +165,6 @@ session_start();
           
         </tr>";
         while ( $row2 = $timmy->fetch_assoc()) {
-         $row2 = $timmy->fetch_assoc();
          $hname = $row2['h_name'];
          $age = $row2['age'];
          $weight = $row2['weight'];

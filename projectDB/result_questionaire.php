@@ -133,12 +133,12 @@ session_start();
 
             $sql1 = 'INSERT INTO donor_donation (h_name, cid, age, weight, vol_blood, count, date_time) VALUES ("'.$h2['h_name'].'", "'.$cid.'", '.$age1.', '.$weight.', '.$vol.', '.$sqlcount.', "'.$datetime.'")';
 
-             //echo $sql1."\n";
+             echo $sql1."\n";
 
              if ( $conn->query($sql1)===TRUE ){
-               //echo "insert complete";
+               echo "insert complete";
              }else{
-               //echo "insert incomplete";
+               echo "insert incomplete";
              }
 
             $bloodtypeSQL = "select * FROM donor as D WHERE D.cid = '$idnum'";

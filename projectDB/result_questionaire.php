@@ -131,7 +131,7 @@ session_start();
 
             $ssn = "(SELECT D.ssn FROM staff as S, donor_donation as D WHERE D.ssn = S.ssn)";
 
-            $sql1 = 'INSERT INTO donor_donation (h_name, cid, age, weight, vol_blood, count, date_time) VALUES ("'.$h2['h_name'].'", "'.$cid.'", '.$age1.', '.$weight.', '.$vol.', '.$sqlcount.', "'.$datetime.'")';
+            $sql1 = 'INSERT INTO donor_donation (h_name, cid, age, weight, vol_blood, count, date_time,ssn) VALUES ("'.$h2['h_name'].'", "'.$cid.'", '.$age1.', '.$weight.', '.$vol.', '.$sqlcount.', "'.$datetime.'","'.$_SESSION['S'].'")';
 
          //    echo $sql1."\n";
              $conn->query($sql1);

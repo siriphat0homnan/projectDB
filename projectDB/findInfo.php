@@ -105,7 +105,7 @@ session_start();
             $idnum = $_GET['idnum'];
             $_SESSION['idnum'] = $idnum;
             $poon = "SELECT cid, title, f_name, l_name, blood_type, birth_date, address, job, email, disease FROM donor WHERE cid = '$idnum'";
-            $tim = "SELECT h_name, age, weight, vol_blood, count, date_time FROM donor_donation WHERE cid = $idnum";
+            $tim = "SELECT h_name, age, weight, vol_blood, count, date_time,ssn FROM donor_donation WHERE cid = $idnum";
 
             $result = $conn->query($poon);
             $timmy = $conn->query($tim);
@@ -162,6 +162,7 @@ session_start();
           <td><center>จำนวนเลือด</center></td>
           <td><center>ครั้งที่บริจาคโลหิต</center></td>
           <td><center>วันที่บริจาค</center></td>
+          <td><center>เลขเจ้าหน้าที่ผู้ดูแล</center></td>
           
         </tr>";
         while ( $row2 = $timmy->fetch_assoc()) {
@@ -171,6 +172,7 @@ session_start();
          $volblood = $row2['vol_blood'];
          $count2 = $row2['count'];
          $datetime = $row2['date_time'];
+         $ssn = $row2['ssn'];
 
          echo" <tr>
          <td><center>$hname</center></td>
@@ -179,6 +181,7 @@ session_start();
          <td><center>$volblood</center></td>
          <td><center>".$count2."</center></td>
          <td><center>$datetime</center></td>
+         <td><center>".$ssn."</center></td>
 
        </tr>";
      }

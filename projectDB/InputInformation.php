@@ -63,6 +63,17 @@
             //document.getElementById('htel').style.borderColor = "white";
               return false;  }
             //alert( htel.length );
+
+            /*var date = document.getElementById('bday').value;
+            alert (date);
+
+            var pday = new Date().getFullYear() + "-" + new Date().getMonth() + "-" + new Date().getDate();
+            alert (pday);
+            if ( date.localeCompare(pday) > 0 ) {
+              alert ("วัทร่เกิน");
+              return false;
+            }*/
+
             if ( htel.length < 9 ) {
               if ( htel.localeCompare("-") != 0 ){ 
                 alert("ใส่เลขให้ครบ"); 
@@ -124,7 +135,7 @@
                 <label for="Lname">นามสกุล:</label>
                 <input type="text" class="form-control" name="Lname" pattern="[ก-ฮะาิีึืุูเแัโำไใ์ฤฦ]{2,100}" title="กรุณากรอกนามสกุลเป็นภาษาไทย: โอภาสกุล" placeholder="สกุล" style="width: 30%; "> <br>
 
-                <label for="date" >เดือน/วัน/ปีเกิด:</label> <input type="date" name="bday" class="form-control" style="width: 30%;"> 
+                <label for="date" >เดือน/วัน/ปีเกิด:</label> <input type="date" name="bday" id="bday" class="form-control" style="width: 30%;"> 
                 <br>
 
                 <label for="id">เลขบัตรระจำตัวประชาชน: </label>

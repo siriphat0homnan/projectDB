@@ -39,7 +39,7 @@
           $row = $result->fetch_assoc();
           $hos = $row['h_name'];
 
-          $sql = "select title, f_name, l_name, position, email from staff where ssn = '".$_SESSION['S']."' ";
+          $sql = "select title, f_name, l_name, position, email, ssn from staff where ssn = '".$_SESSION['S']."' ";
           
           $result = $conn->query($sql);
           $row = $result->fetch_assoc();
@@ -48,6 +48,7 @@
           $l_name = $row['l_name'];
           $position = $row['position'];
           $email = $row['email'];
+          $ssn = $row['ssn'];
 
 
           ?>
@@ -329,7 +330,7 @@
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
-      echo " จาก ".$row["sender_name"]." ไปยัง ".$row["recipient_name"]." ณ.วันที่ ".$row["date_time"]." กรุ๊ป ".$row["blood_send"]." จำนวน ".$row["volume"]."<br>";
+      echo " จาก ".$row["sender_name"]." ไปยัง ".$row["recipient_name"]." ณ.วันที่ ".$row["date_time"]." กรุ๊ป ".$row["blood_send"]." จำนวน ".$row["volume"]." จากรหัสของคนดูแล ".$ssn."<br>";
     }
     ?>
   </div>

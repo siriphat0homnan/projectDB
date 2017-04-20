@@ -177,7 +177,7 @@ session_start();
          <td><center>$age</center></td>
          <td><center>$weight</center></td>
          <td><center>$volblood</center></td>
-         <td><center>".($count2/2)."</center></td>
+         <td><center>".$count2."</center></td>
          <td><center>$datetime</center></td>
 
        </tr>";
